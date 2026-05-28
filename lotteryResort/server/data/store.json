@@ -1,0 +1,728 @@
+{
+  "users": [
+    {
+      "employeeId": "00000",
+      "name": "관리자",
+      "isAdmin": true
+    },
+    {
+      "employeeId": "20212",
+      "name": "이혜영",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "20307",
+      "name": "허광",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "20314",
+      "name": "장은정",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "20403",
+      "name": "임성묵",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "20623",
+      "name": "안치만",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "20702",
+      "name": "한정헌",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "20706",
+      "name": "전원규",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "20707",
+      "name": "홍석용",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "20712",
+      "name": "최희대",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "20803",
+      "name": "배원호",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "20808",
+      "name": "서석현",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "20901",
+      "name": "원태희",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "20904",
+      "name": "김승원",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21201",
+      "name": "이인영",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21302",
+      "name": "우오현",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21409",
+      "name": "경성현",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21412",
+      "name": "이햇살",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21413",
+      "name": "허준무",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21422",
+      "name": "이의경",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21507",
+      "name": "김해용",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21508",
+      "name": "박석훈",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21512",
+      "name": "유리",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21602",
+      "name": "김홍욱",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21604",
+      "name": "정수인",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21607",
+      "name": "류태우",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21608",
+      "name": "정한솔",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21609",
+      "name": "홍승현",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21615",
+      "name": "정서연",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21804",
+      "name": "홍은채",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21805",
+      "name": "김현성",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21808",
+      "name": "성민규",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21811",
+      "name": "하승수",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21816",
+      "name": "이일특",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21821",
+      "name": "이창헌",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "21913",
+      "name": "채상천",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22002",
+      "name": "하수홍",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22007",
+      "name": "권동환",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22008",
+      "name": "김성재",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22016",
+      "name": "박솔민",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22109",
+      "name": "안홍천",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22110",
+      "name": "김아람",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22118",
+      "name": "김솔지",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22119",
+      "name": "김경아",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22122",
+      "name": "류윤지",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22123",
+      "name": "장민혁",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22124",
+      "name": "최정현",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22126",
+      "name": "박상민",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22203",
+      "name": "안세명",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22204",
+      "name": "김범준",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22207",
+      "name": "이경제",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22208",
+      "name": "오예훈",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22209",
+      "name": "박진혁",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22210",
+      "name": "윤희성",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22213",
+      "name": "한혜진",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22304",
+      "name": "김경화",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22307",
+      "name": "이서영",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22311",
+      "name": "김기영",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22312",
+      "name": "이동건",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22313",
+      "name": "이재은",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22316",
+      "name": "임상호",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22320",
+      "name": "이나영",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22328",
+      "name": "이정연",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22329",
+      "name": "장민교",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22330",
+      "name": "이동혁",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22332",
+      "name": "최준영",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22334",
+      "name": "이승환",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22402",
+      "name": "박요섭",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22403",
+      "name": "임미란",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22406",
+      "name": "김태헌",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22408",
+      "name": "권신균",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22409",
+      "name": "유도원",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22412",
+      "name": "권기석",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22415",
+      "name": "김윤정",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22419",
+      "name": "박정민",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22503",
+      "name": "오준호",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22504",
+      "name": "한인구",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22505",
+      "name": "이동수",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22506",
+      "name": "김재훈",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22508",
+      "name": "정일권",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22509",
+      "name": "김나미",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22511",
+      "name": "윤군주",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22512",
+      "name": "오종민",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22601",
+      "name": "김종윤",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22602",
+      "name": "김호윤",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22603",
+      "name": "이준우",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22604",
+      "name": "민상기",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "90002",
+      "name": "김경수",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "90003",
+      "name": "김진환",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "90008",
+      "name": "이은주",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "90011",
+      "name": "송대석",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "90013",
+      "name": "설유진",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "90014",
+      "name": "이현민",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "90017",
+      "name": "엄기현",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "90018",
+      "name": "구준모",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "90019",
+      "name": "문재원",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "90020",
+      "name": "장원상",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "90021",
+      "name": "김명익",
+      "isAdmin": false
+    }
+  ],
+  "lotteries": [
+    {
+      "id": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "name": "테스트",
+      "startDate": "2026-07-04",
+      "endDate": "2026-07-08",
+      "applicationDays": 2,
+      "winnersPerDay": 2,
+      "status": "closed",
+      "createdAt": "2026-05-27T05:30:02.792Z"
+    }
+  ],
+  "applications": [
+    {
+      "id": "76bb56d6-e24f-49ce-81c9-ed0fcb843965",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "21508",
+      "name": "박석훈",
+      "usageDate": "2026-07-04",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-05-27T05:31:07.664Z"
+    },
+    {
+      "id": "08316148-9153-4a5c-baff-7b47613408be",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "21508",
+      "name": "박석훈",
+      "usageDate": "2026-07-06",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-05-27T05:31:23.722Z"
+    },
+    {
+      "id": "83cdaf97-d4ad-4ed9-9382-fd0578581398",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "21507",
+      "name": "김해용",
+      "usageDate": "2026-07-04",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-05-27T05:50:02.874Z"
+    },
+    {
+      "id": "42a20105-4feb-4aa2-97f7-66e7e4507bc4",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "21507",
+      "name": "김해용",
+      "usageDate": "2026-07-05",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-05-27T05:50:07.536Z"
+    },
+    {
+      "id": "b49ceadb-caac-47ce-8983-9b75f8037a84",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "21811",
+      "name": "하승수",
+      "usageDate": "2026-07-04",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-05-27T05:52:31.499Z"
+    },
+    {
+      "id": "fe535a2d-ca5c-4d91-af9b-5c43258e7c70",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "21811",
+      "name": "하승수",
+      "usageDate": "2026-07-05",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-05-27T05:52:34.691Z"
+    },
+    {
+      "id": "8941c2c6-57f7-41a3-907d-d5627041fb71",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "21808",
+      "name": "성민규",
+      "usageDate": "2026-07-05",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-05-27T06:24:20.429Z"
+    },
+    {
+      "id": "74abaf78-0c77-4330-a154-a6dfdd83a942",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "21808",
+      "name": "성민규",
+      "usageDate": "2026-07-06",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-05-27T06:24:23.591Z"
+    },
+    {
+      "id": "830e551c-fc94-4b60-884d-05a8f9173df7",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "21805",
+      "name": "김현성",
+      "usageDate": "2026-07-07",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-05-27T06:25:11.852Z"
+    },
+    {
+      "id": "43164860-bbc0-46a9-9b9b-8a8bec59ac69",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "21805",
+      "name": "김현성",
+      "usageDate": "2026-07-08",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-05-27T06:25:16.657Z"
+    },
+    {
+      "id": "4aa2e8a4-581d-426e-bf23-aa089f45de66",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "21615",
+      "name": "정서연",
+      "usageDate": "2026-07-06",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-05-27T06:26:08.010Z"
+    },
+    {
+      "id": "15e29c7d-c43f-4ee8-aa8f-24760478850c",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "21615",
+      "name": "정서연",
+      "usageDate": "2026-07-07",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-05-27T06:26:11.457Z"
+    },
+    {
+      "id": "e10d6893-3a02-4da4-9f9f-acb223b6d5bd",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "21512",
+      "name": "유리",
+      "usageDate": "2026-07-06",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-05-27T06:26:47.485Z"
+    },
+    {
+      "id": "b62d3554-7e26-48c5-8963-72cbdeeb1e87",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "21512",
+      "name": "유리",
+      "usageDate": "2026-07-08",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-05-27T06:26:50.588Z"
+    },
+    {
+      "id": "5eea3772-347f-4c30-b41d-6c3247daa52b",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "90021",
+      "name": "김명익",
+      "usageDate": "2026-07-04",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-05-27T06:28:20.532Z"
+    },
+    {
+      "id": "8efbae54-497d-4ab9-a14b-87b15ab56070",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "90021",
+      "name": "김명익",
+      "usageDate": "2026-07-07",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-05-27T06:28:24.729Z"
+    },
+    {
+      "id": "58bbbd01-65ad-4e2d-8aeb-17cccb61df45",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "90017",
+      "name": "엄기현",
+      "usageDate": "2026-07-05",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-05-27T06:29:21.895Z"
+    },
+    {
+      "id": "df855b9f-baf3-4496-adc5-a175fd464db8",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "90017",
+      "name": "엄기현",
+      "usageDate": "2026-07-06",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-05-27T06:29:24.888Z"
+    },
+    {
+      "id": "395222a5-6ddb-4de7-bb1d-80e3d31fd56b",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "22403",
+      "name": "임미란",
+      "usageDate": "2026-07-07",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-05-27T06:30:15.140Z"
+    },
+    {
+      "id": "aaa12ed5-6c4d-45bf-a755-cee7ac30fa42",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "22403",
+      "name": "임미란",
+      "usageDate": "2026-07-08",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-05-27T06:30:18.100Z"
+    },
+    {
+      "id": "eb5f9602-06c5-4d2b-ba70-f1f94f074089",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "22402",
+      "name": "박요섭",
+      "usageDate": "2026-07-04",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-05-27T06:30:44.347Z"
+    },
+    {
+      "id": "96873080-241d-4326-bf73-b126c1ccda55",
+      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "employeeId": "22402",
+      "name": "박요섭",
+      "usageDate": "2026-07-08",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-05-27T06:30:47.328Z"
+    }
+  ]
+}

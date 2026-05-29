@@ -112,6 +112,19 @@ export function AppProvider({ children }) {
           })
           break
         }
+        case 'ADD_USER': {
+          nextState = await apiRequest('/api/users', {
+            method: 'POST',
+            body: action.payload,
+          })
+          break
+        }
+        case 'DELETE_USER': {
+          nextState = await apiRequest(`/api/users/${action.payload}`, {
+            method: 'DELETE',
+          })
+          break
+        }
         default:
           return
       }
@@ -124,10 +137,12 @@ export function AppProvider({ children }) {
         return merged
       })
     } catch (error) {
+      const message = error.message || '요청 처리 중 오류가 발생했습니다.'
       setState((prev) => ({
         ...prev,
-        loginError: error.message || '요청 처리 중 오류가 발생했습니다.',
+        loginError: message,
       }))
+      throw error
     }
   }
 

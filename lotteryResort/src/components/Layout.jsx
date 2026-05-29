@@ -4,6 +4,7 @@ import SiteFooter from './SiteFooter'
 const tabs = [
   { id: 'apply', label: '추첨 신청', adminOnly: false },
   { id: 'register', label: '추첨 등록', adminOnly: true },
+  { id: 'users', label: '사용자 관리', adminOnly: true },
   { id: 'admin', label: '관리자', adminOnly: true },
 ]
 

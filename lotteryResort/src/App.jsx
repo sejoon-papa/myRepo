@@ -5,6 +5,7 @@ import LoginPage from './components/LoginPage'
 import LotteryApply from './components/LotteryApply'
 import LotteryRegister from './components/LotteryRegister'
 import AdminPanel from './components/AdminPanel'
+import UserManagement from './components/UserManagement'
 import { useBlockBrowserBack } from './hooks/useBlockBrowserBack'
 import SiteFooter from './components/SiteFooter'
 
@@ -21,7 +22,7 @@ function AppContent() {
 
   const handleTabChange = (tabId) => {
     setActiveTab(tabId)
-    if (tabId === 'admin') {
+    if (tabId === 'admin' || tabId === 'users') {
       refreshState({ preserveSession: true })
     }
   }
@@ -62,6 +63,7 @@ function AppContent() {
     <Layout activeTab={activeTab} onTabChange={handleTabChange}>
       {activeTab === 'apply' && <LotteryApply />}
       {activeTab === 'register' && <LotteryRegister />}
+      {activeTab === 'users' && <UserManagement />}
       {activeTab === 'admin' && <AdminPanel />}
     </Layout>
   )

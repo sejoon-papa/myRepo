@@ -173,6 +173,62 @@ app.post('/api/logout', async (_, res) => {
   res.json({ ...state, session: null })
 })
 
+app.post('/api/users', async (req, res) => {
+  const { employeeId, name, isAdmin } = req.body
+
+  if (!/^\d{5}$/.test(employeeId ?? '')) {
+    return res.status(400).json({ error: '사번은 5자리 숫자여야 합니다.' })
+  }
+
+  if (!name?.trim()) {
+    return res.status(400).json({ error: '성명을 입력해 주세요.' })
+  }
+
+  const state = await readStore()
+
+  if (state.users.some((u) => u.employeeId === employeeId)) {
+    return res.status(400).json({ error: '이미 등록된 사번입니다.' })
+  }
+
+  const user = {
+    employeeId,
+    name: name.trim(),
+    isAdmin: Boolean(isAdmin),
+  }
+
+  const next = await writeStore({
+    ...state,
+    users: [...state.users, user],
+  })
+  res.json(next)
+})
+
+app.delete('/api/users/:employeeId', async (req, res) => {
+  const employeeId = req.params.employeeId
+  const state = await readStore()
+  const target = state.users.find((u) => u.employeeId === employeeId)
+
+  if (!target) {
+    return res.status(404).json({ error: '사용자를 찾을 수 없습니다.' })
+  }
+
+  if (employeeId === '00000') {
+    return res.status(400).json({ error: '기본 관리자 계정은 삭제할 수 없습니다.' })
+  }
+
+  const adminCount = state.users.filter((u) => u.isAdmin).length
+  if (target.isAdmin && adminCount <= 1) {
+    return res.status(400).json({ error: '마지막 관리자 계정은 삭제할 수 없습니다.' })
+  }
+
+  const next = await writeStore({
+    ...state,
+    users: state.users.filter((u) => u.employeeId !== employeeId),
+    applications: state.applications.filter((a) => a.employeeId !== employeeId),
+  })
+  res.json(next)
+})
+
 app.post('/api/lotteries', async (req, res) => {
   const { name, startDate, endDate, applicationDays, winnersPerDay } = req.body
 

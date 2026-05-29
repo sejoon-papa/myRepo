@@ -1,5 +1,6 @@
 import cors from 'cors'
 import express from 'express'
+import { existsSync } from 'node:fs'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -367,6 +368,20 @@ app.post('/api/lotteries/:id/run', async (req, res) => {
   return res.json(next)
 })
 
+const distDir = path.join(__dirname, '..', 'dist')
+if (existsSync(distDir)) {
+  app.use(express.static(distDir))
+  app.get(/.*/, (req, res, next) => {
+    if (req.path.startsWith('/api')) return next()
+    res.sendFile(path.join(distDir, 'index.html'))
+  })
+}
+
 app.listen(port, '0.0.0.0', () => {
-  console.log(`API server listening on http://0.0.0.0:${port}`)
+  console.log(`Server listening on http://0.0.0.0:${port}`)
+  if (existsSync(distDir)) {
+    console.log(`Serving frontend from ${distDir}`)
+  } else {
+    console.log('API only — run "npm run dev" for development with Vite')
+  }
 })

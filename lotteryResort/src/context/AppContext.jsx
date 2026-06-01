@@ -93,6 +93,13 @@ export function AppProvider({ children }) {
           })
           break
         }
+        case 'ADD_REAPPLY_APPLICATION': {
+          nextState = await apiRequest('/api/applications/reapply', {
+            method: 'POST',
+            body: action.payload,
+          })
+          break
+        }
         case 'UPDATE_APPLICATION': {
           nextState = await apiRequest(`/api/applications/${action.payload.id}`, {
             method: 'PUT',
@@ -108,6 +115,18 @@ export function AppProvider({ children }) {
         }
         case 'RUN_LOTTERY': {
           nextState = await apiRequest(`/api/lotteries/${action.payload}/run`, {
+            method: 'POST',
+          })
+          break
+        }
+        case 'RUN_REAPPLY_LOTTERY': {
+          nextState = await apiRequest(`/api/lotteries/${action.payload}/run-reapply`, {
+            method: 'POST',
+          })
+          break
+        }
+        case 'CLOSE_REAPPLY': {
+          nextState = await apiRequest(`/api/lotteries/${action.payload}/close-reapply`, {
             method: 'POST',
           })
           break

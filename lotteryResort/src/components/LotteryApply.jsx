@@ -1,6 +1,22 @@
 import { useState } from 'react'
 import { useApp } from '../context/AppContext'
-import { getApplicationDays } from '../utils/lottery'
+import ReapplyDateCalendar from './ReapplyDateCalendar'
+import {
+  canApplyMoreToLottery,
+  getApplicationDays,
+  getAvailableVacantDatesForUser,
+  getMaxOpenApplicationCount,
+  getMaxReapplyCount,
+  getMyApplicationsForLottery,
+  getOpenApplicationCount,
+  getReapplyDates,
+  getRemainingReapplyCount,
+  getWonCount,
+  isReapplyEligible,
+  isReapplyOpen,
+  sortApplicationsByRecentLottery,
+  sortByCreatedAtDesc,
+} from '../utils/lottery'
 
 const statusLabel = {
   pending: { text: '대기', className: 'bg-amber-100 text-amber-700' },
@@ -8,10 +24,18 @@ const statusLabel = {
   lost: { text: '낙첨', className: 'bg-slate-100 text-slate-600' },
 }
 
-function validateApplication({ state, session, lotteryId, usageDate, excludeId }) {
+function validateApplication({ state, session, lotteryId, usageDate, excludeId, isReapply = false }) {
   const lottery = state.lotteries.find((l) => l.id === lotteryId)
   if (!lottery) return '추첨 정보를 찾을 수 없습니다.'
-  if (lottery.status !== 'open') return '마감된 추첨은 수정·취소할 수 없습니다.'
+
+  if (isReapply) {
+    if (lottery.status !== 'reapply') return '재신청 기간이 아닙니다.'
+    if (!getReapplyDates(lottery, state.applications).includes(usageDate)) {
+      return '재신청 가능한 사용일만 선택할 수 있습니다.'
+    }
+  } else if (lottery.status !== 'open') {
+    return '마감된 추첨은 수정·취소할 수 없습니다.'
+  }
 
   if (usageDate < lottery.startDate || usageDate > lottery.endDate) {
     return `사용일은 추첨 기간(${lottery.startDate} ~ ${lottery.endDate}) 안의 날짜로 선택해 주세요.`
@@ -40,15 +64,47 @@ export default function LotteryApply() {
   const [editingId, setEditingId] = useState(null)
   const [editUsageDate, setEditUsageDate] = useState('')
   const [editRemarks, setEditRemarks] = useState('')
+  const [reapplyLotteryId, setReapplyLotteryId] = useState('')
+  const [reapplyUsageDate, setReapplyUsageDate] = useState('')
+  const [reapplyRemarks, setReapplyRemarks] = useState('')
 
-  const openLotteries = state.lotteries.filter((l) => l.status === 'open')
-  const myApplications = state.applications.filter((a) => a.employeeId === session.employeeId)
+  const openLotteries = sortByCreatedAtDesc(state.lotteries.filter((l) => l.status === 'open'))
+  const reapplyLotteries = sortByCreatedAtDesc(
+    state.lotteries.filter(
+      (l) => isReapplyOpen(l) && isReapplyEligible(state.applications, l, session.employeeId),
+    ),
+  )
+  const myApplications = sortApplicationsByRecentLottery(
+    state.applications.filter((a) => a.employeeId === session.employeeId),
+    state.lotteries,
+  )
   const selectedLottery = state.lotteries.find((l) => l.id === lotteryId)
 
-  const selectedLotteryMaxDays = selectedLottery ? getApplicationDays(selectedLottery) : null
-  const myAppsForSelected = lotteryId
-    ? myApplications.filter((a) => a.lotteryId === lotteryId)
+  const selectedLotteryMaxDays = selectedLottery ? getMaxOpenApplicationCount(selectedLottery) : null
+  const myOpenAppsForSelected = lotteryId
+    ? myApplications.filter((a) => a.lotteryId === lotteryId && !a.isReapply)
     : []
+  const selectedReapplyLottery = state.lotteries.find((l) => l.id === reapplyLotteryId)
+  const reapplyPoolDates = selectedReapplyLottery
+    ? getReapplyDates(selectedReapplyLottery, state.applications)
+    : []
+  const availableReapplyDates = selectedReapplyLottery
+    ? getAvailableVacantDatesForUser(
+        reapplyPoolDates,
+        state.applications,
+        reapplyLotteryId,
+        session.employeeId,
+      )
+    : []
+  const reapplyRemainingCount = selectedReapplyLottery
+    ? getRemainingReapplyCount(selectedReapplyLottery, state.applications, session.employeeId)
+    : 0
+  const reapplyWonCount = selectedReapplyLottery
+    ? getWonCount(getMyApplicationsForLottery(state.applications, reapplyLotteryId, session.employeeId))
+    : 0
+  const reapplyMaxCount = selectedReapplyLottery
+    ? getMaxReapplyCount(selectedReapplyLottery, state.applications, session.employeeId)
+    : 0
 
   const showMessage = (text, isSuccess = false) => {
     setMessage(text)
@@ -63,13 +119,8 @@ export default function LotteryApply() {
     const lottery = state.lotteries.find((l) => l.id === lotteryId)
     if (!lottery) return
 
-    const maxApplicationDays = getApplicationDays(lottery)
-    const myAppsForLottery = state.applications.filter(
-      (a) => a.lotteryId === lotteryId && a.employeeId === session.employeeId,
-    )
-
-    if (myAppsForLottery.length >= maxApplicationDays) {
-      showMessage(`최대 ${maxApplicationDays}일까지 신청할 수 있습니다.`)
+    if (!canApplyMoreToLottery(lottery, state.applications, session.employeeId)) {
+      showMessage(`최대 ${getMaxOpenApplicationCount(lottery)}일까지 신청할 수 있습니다.`)
       return
     }
 
@@ -93,6 +144,45 @@ export default function LotteryApply() {
     setUsageDate('')
     setRemarks('')
     showMessage('추첨 신청이 완료되었습니다.', true)
+  }
+
+  const handleReapplySubmit = (e) => {
+    e.preventDefault()
+    if (!reapplyLotteryId || !reapplyUsageDate) return
+
+    const lottery = state.lotteries.find((l) => l.id === reapplyLotteryId)
+    if (!lottery) return
+
+    if (!canApplyMoreToLottery(lottery, state.applications, session.employeeId)) {
+      showMessage(
+        `재신청 가능 횟수를 모두 사용했습니다. (최대 ${getMaxReapplyCount(lottery, state.applications, session.employeeId)}건)`,
+      )
+      return
+    }
+
+    if (!availableReapplyDates.includes(reapplyUsageDate)) {
+      showMessage('검정색으로 표시된 신청 가능일만 선택할 수 있습니다.')
+      return
+    }
+
+    dispatch({
+      type: 'ADD_REAPPLY_APPLICATION',
+      payload: {
+        lotteryId: reapplyLotteryId,
+        employeeId: session.employeeId,
+        name: session.name,
+        usageDate: reapplyUsageDate,
+        remarks: reapplyRemarks.trim(),
+      },
+    })
+      .then(() => {
+        setReapplyUsageDate('')
+        setReapplyRemarks('')
+        showMessage('재신청이 완료되었습니다.', true)
+      })
+      .catch((error) => {
+        showMessage(error.message || '재신청에 실패했습니다.')
+      })
   }
 
   const startEdit = (app) => {
@@ -131,6 +221,7 @@ export default function LotteryApply() {
       lotteryId: app.lotteryId,
       usageDate: editUsageDate,
       excludeId: app.id,
+      isReapply: app.isReapply,
     })
     if (error) {
       showMessage(error)
@@ -161,7 +252,10 @@ export default function LotteryApply() {
 
   const handleCancelApplication = (app) => {
     const lottery = state.lotteries.find((l) => l.id === app.lotteryId)
-    if (lottery?.status !== 'open') {
+    const isOpenApplication = lottery?.status === 'open'
+    const isReapplyApplication = lottery?.status === 'reapply' && app.isReapply
+
+    if (!isOpenApplication && !isReapplyApplication) {
       showMessage('마감된 추첨은 취소할 수 없습니다.')
       return
     }
@@ -185,7 +279,9 @@ export default function LotteryApply() {
 
   const canModify = (app) => {
     const lottery = state.lotteries.find((l) => l.id === app.lotteryId)
-    return app.status === 'pending' && lottery?.status === 'open'
+    if (app.status !== 'pending') return false
+    if (lottery?.status === 'open') return true
+    return lottery?.status === 'reapply' && app.isReapply
   }
 
   const getLotteryName = (id) => state.lotteries.find((l) => l.id === id)?.name ?? '-'
@@ -196,12 +292,12 @@ export default function LotteryApply() {
       <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
         <h2 className="mb-2 text-lg font-bold text-slate-800">추첨 신청</h2>
         <p className="mb-6 text-sm text-slate-500">
-          추첨별 신청일수만큼 신청 가능 · 같은 사용일은 중복 신청할 수 없습니다 · 대기 상태에서만
-          수정·취소 가능
+          추첨별 신청일수에서 당첨일수만큼 뺀 만큼 신청 가능 · 같은 사용일은 중복 신청할 수
+          없습니다 · 대기 상태에서만 수정·취소 가능
           {selectedLotteryMaxDays != null && (
             <>
               {' '}
-              · 선택한 추첨: {myAppsForSelected.length}/{selectedLotteryMaxDays}일 신청
+              · 선택한 추첨: {myOpenAppsForSelected.length}/{selectedLotteryMaxDays}일 신청
             </>
           )}
         </p>
@@ -274,6 +370,86 @@ export default function LotteryApply() {
         )}
       </div>
 
+      {reapplyLotteries.length > 0 && (
+        <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <h2 className="mb-2 text-lg font-bold text-slate-800">재신청</h2>
+          <p className="mb-6 text-sm text-slate-500">
+            신청가능일수에서 당첨일수를 뺀 만큼 재신청할 수 있습니다. (예: 3일 가능 · 1일
+            당첨 → 2일 재신청) 재신청 가능일은 신청자가 없거나 일별 당첨인원이 채워지지 않은
+            날입니다.
+          </p>
+
+          <form onSubmit={handleReapplySubmit} className="space-y-5">
+            <div>
+              <label className="mb-1.5 block text-sm font-medium text-slate-700">추첨 선택</label>
+              <select
+                value={reapplyLotteryId}
+                onChange={(e) => {
+                  setReapplyLotteryId(e.target.value)
+                  setReapplyUsageDate('')
+                }}
+                className="w-full rounded-lg border border-slate-300 px-4 py-2.5 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
+              >
+                <option value="">추첨을 선택하세요</option>
+                {reapplyLotteries.map((lottery) => (
+                  <option key={lottery.id} value={lottery.id}>
+                    {lottery.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {selectedReapplyLottery && (
+              <div className="rounded-lg bg-slate-50 px-4 py-3 text-sm text-slate-600">
+                신청가능 {getApplicationDays(selectedReapplyLottery)}일 − 당첨 {reapplyWonCount}일
+                = 재신청 가능 <strong>{reapplyMaxCount}</strong>건 · 남은 횟수{' '}
+                <strong>{reapplyRemainingCount}</strong>건
+              </div>
+            )}
+
+            <div>
+              <label className="mb-3 block text-sm font-medium text-slate-700">사용일 선택</label>
+              {selectedReapplyLottery ? (
+                <ReapplyDateCalendar
+                  startDate={selectedReapplyLottery.startDate}
+                  endDate={selectedReapplyLottery.endDate}
+                  availableDates={availableReapplyDates}
+                  value={reapplyUsageDate}
+                  onChange={setReapplyUsageDate}
+                  disabled={reapplyRemainingCount === 0 || availableReapplyDates.length === 0}
+                />
+              ) : (
+                <p className="text-sm text-slate-400">추첨을 먼저 선택해 주세요.</p>
+              )}
+            </div>
+
+            <div>
+              <label className="mb-1.5 block text-sm font-medium text-slate-700">비고</label>
+              <textarea
+                value={reapplyRemarks}
+                onChange={(e) => setReapplyRemarks(e.target.value)}
+                rows={3}
+                placeholder="추가 요청사항이 있으면 입력해 주세요"
+                className="w-full resize-none rounded-lg border border-slate-300 px-4 py-2.5 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={
+                !reapplyLotteryId ||
+                !reapplyUsageDate ||
+                reapplyRemainingCount === 0 ||
+                availableReapplyDates.length === 0
+              }
+              className="rounded-lg bg-orange-500 px-6 py-2.5 font-medium text-white transition hover:bg-orange-600 disabled:cursor-not-allowed disabled:bg-slate-300"
+            >
+              재신청하기
+            </button>
+          </form>
+        </div>
+      )}
+
       <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
         <h3 className="mb-4 font-semibold text-slate-800">내 신청 내역</h3>
         {myApplications.length === 0 ? (
@@ -302,14 +478,38 @@ export default function LotteryApply() {
                       <tr key={app.id} className="border-b border-slate-100 bg-teal-50/50">
                         <td className="py-3 pr-4 text-slate-800">{getLotteryName(app.lotteryId)}</td>
                         <td className="py-3 pr-4">
-                          <input
-                            type="date"
-                            value={editUsageDate}
-                            min={lottery?.startDate}
-                            max={lottery?.endDate}
-                            onChange={(e) => setEditUsageDate(e.target.value)}
-                            className="rounded border border-slate-300 px-2 py-1 text-sm outline-none focus:border-teal-500"
-                          />
+                          {app.isReapply ? (
+                            (() => {
+                              const editVacantDates = getAvailableVacantDatesForUser(
+                                getReapplyDates(lottery, state.applications),
+                                state.applications,
+                                app.lotteryId,
+                                session.employeeId,
+                                app.id,
+                              )
+                              return (
+                                <div className="min-w-[220px]">
+                                  <ReapplyDateCalendar
+                                    compact
+                                    startDate={lottery?.startDate}
+                                    endDate={lottery?.endDate}
+                                    availableDates={editVacantDates}
+                                    value={editUsageDate}
+                                    onChange={setEditUsageDate}
+                                  />
+                                </div>
+                              )
+                            })()
+                          ) : (
+                            <input
+                              type="date"
+                              value={editUsageDate}
+                              min={lottery?.startDate}
+                              max={lottery?.endDate}
+                              onChange={(e) => setEditUsageDate(e.target.value)}
+                              className="rounded border border-slate-300 px-2 py-1 text-sm outline-none focus:border-teal-500"
+                            />
+                          )}
                         </td>
                         <td className="py-3 pr-4">
                           <input
@@ -352,7 +552,12 @@ export default function LotteryApply() {
                   return (
                     <tr key={app.id} className="border-b border-slate-100">
                       <td className="py-3 pr-4 text-slate-800">{getLotteryName(app.lotteryId)}</td>
-                      <td className="py-3 pr-4 text-slate-600">{app.usageDate}</td>
+                      <td className="py-3 pr-4 text-slate-600">
+                        {app.usageDate}
+                        {app.isReapply && (
+                          <span className="ml-2 text-xs text-orange-600">재신청</span>
+                        )}
+                      </td>
                       <td className="py-3 pr-4 text-slate-600">{app.remarks || '-'}</td>
                       <td className="py-3 pr-4">
                         <span

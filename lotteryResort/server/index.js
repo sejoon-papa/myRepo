@@ -4,6 +4,19 @@ import { existsSync } from 'node:fs'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import {
+  getApplicationDays,
+  getMaxOpenApplicationCount,
+  getMaxReapplyCount,
+  getMyApplicationsForLottery,
+  getOpenApplicationCount,
+  getReapplyDates,
+  getRemainingReapplyCount,
+  getReapplyApplicationCount,
+  getWonCount,
+  getWinnersPerDay,
+  isReapplyEligible,
+} from '../src/utils/lottery.js'
 
 const app = express()
 const port = process.env.PORT || 4000
@@ -38,10 +51,17 @@ async function readStore() {
   await ensureStore()
   const raw = await readFile(dataPath, 'utf-8')
   const parsed = JSON.parse(raw)
+  const applications = parsed.applications ?? []
+  const lotteries = (parsed.lotteries ?? []).map((lottery) => {
+    if (lottery.status === 'reapply') {
+      return { ...lottery, vacantDates: getReapplyDates(lottery, applications) }
+    }
+    return lottery
+  })
   return {
     users: parsed.users ?? defaultState.users,
-    lotteries: parsed.lotteries ?? [],
-    applications: parsed.applications ?? [],
+    lotteries,
+    applications,
   }
 }
 
@@ -60,14 +80,6 @@ function uuid() {
 }
 
 const CONSECUTIVE_WIN_BOOST = 3
-
-function getApplicationDays(lottery) {
-  return lottery.applicationDays ?? lottery.usageDays ?? 1
-}
-
-function getWinnersPerDay(lottery) {
-  return lottery.winnersPerDay ?? 2
-}
 
 function getPreviousDate(dateStr) {
   const date = new Date(`${dateStr}T12:00:00`)
@@ -110,12 +122,15 @@ function pickWeightedWinners(candidates, count, getWeight) {
   return winners
 }
 
-function runLotteryDraw(lottery, applications) {
+function runLotteryDraw(lottery, applications, { onlyDates } = {}) {
   const lotteryId = lottery.id
   const winnersPerDay = getWinnersPerDay(lottery)
-  const pending = applications.filter((a) => a.lotteryId === lotteryId && a.status === 'pending')
+  const dateFilter = onlyDates ? new Set(onlyDates) : null
+  const pending = applications.filter((a) => {
+    if (a.lotteryId !== lotteryId || a.status !== 'pending') return false
+    return !dateFilter || dateFilter.has(a.usageDate)
+  })
   const dates = [...new Set(pending.map((a) => a.usageDate))].sort()
-  const winnerIds = new Set()
   let updatedApplications = [...applications]
 
   for (const usageDate of dates) {
@@ -123,18 +138,22 @@ function runLotteryDraw(lottery, applications) {
       (a) => a.lotteryId === lotteryId && a.usageDate === usageDate && a.status === 'pending',
     )
 
-    const winners = pickWeightedWinners(
-      dayPending,
-      winnersPerDay,
-      (app) =>
-        wonOnPreviousDay(updatedApplications, lotteryId, app.employeeId, usageDate)
-          ? CONSECUTIVE_WIN_BOOST
-          : 1,
-    )
+    const existingWonCount = updatedApplications.filter(
+      (a) => a.lotteryId === lotteryId && a.usageDate === usageDate && a.status === 'won',
+    ).length
+    const slotsRemaining = Math.max(0, winnersPerDay - existingWonCount)
 
-    for (const winner of winners) {
-      winnerIds.add(winner.id)
-    }
+    const winners =
+      slotsRemaining > 0
+        ? pickWeightedWinners(
+            dayPending,
+            slotsRemaining,
+            (app) =>
+              wonOnPreviousDay(updatedApplications, lotteryId, app.employeeId, usageDate)
+                ? CONSECUTIVE_WIN_BOOST
+                : 1,
+          )
+        : []
 
     const dayWinnerIds = new Set(winners.map((w) => w.id))
     updatedApplications = updatedApplications.map((a) => {
@@ -145,7 +164,7 @@ function runLotteryDraw(lottery, applications) {
     })
   }
 
-  return { updatedApplications, winnerIds }
+  return { updatedApplications, drawnDates: dates }
 }
 
 app.get('/api/state', async (_, res) => {
@@ -283,13 +302,12 @@ app.post('/api/applications', async (req, res) => {
     return res.status(400).json({ error: '마감된 추첨에는 신청할 수 없습니다.' })
   }
 
-  const myCount = state.applications.filter(
-    (a) => a.lotteryId === lotteryId && a.employeeId === employeeId,
-  ).length
+  const myApps = getMyApplicationsForLottery(state.applications, lotteryId, employeeId)
+  const openCount = getOpenApplicationCount(myApps)
 
-  if (myCount >= getApplicationDays(lottery)) {
+  if (openCount >= getMaxOpenApplicationCount(lottery)) {
     return res.status(400).json({
-      error: `이 추첨은 최대 ${getApplicationDays(lottery)}일까지 신청할 수 있습니다.`,
+      error: `이 추첨은 최대 ${getMaxOpenApplicationCount(lottery)}일까지 신청할 수 있습니다.`,
     })
   }
 
@@ -307,6 +325,68 @@ app.post('/api/applications', async (req, res) => {
     id: uuid(),
     ...req.body,
     status: 'pending',
+    createdAt: new Date().toISOString(),
+  }
+  const next = await writeStore({
+    ...state,
+    applications: [...state.applications, application],
+  })
+  res.json(next)
+})
+
+app.post('/api/applications/reapply', async (req, res) => {
+  const state = await readStore()
+  const { lotteryId, employeeId, usageDate, remarks, name } = req.body
+  const lottery = state.lotteries.find((l) => l.id === lotteryId)
+
+  if (!lottery) {
+    return res.status(404).json({ error: '추첨 정보를 찾을 수 없습니다.' })
+  }
+
+  if (lottery.status !== 'reapply') {
+    return res.status(400).json({ error: '재신청 기간이 아닙니다.' })
+  }
+
+  const reapplyDates = getReapplyDates(lottery, state.applications)
+  if (!reapplyDates.includes(usageDate)) {
+    return res.status(400).json({ error: '재신청 가능한 사용일만 선택할 수 있습니다.' })
+  }
+
+  if (!isReapplyEligible(state.applications, lottery, employeeId)) {
+    const myApps = getMyApplicationsForLottery(state.applications, lotteryId, employeeId)
+    const wonCount = getWonCount(myApps)
+    const maxReapply = getMaxReapplyCount(lottery, state.applications, employeeId)
+    const usedReapply = getReapplyApplicationCount(myApps)
+    return res.status(400).json({
+      error: `재신청 가능 횟수를 모두 사용했습니다. (신청가능 ${getApplicationDays(lottery)}일 − 당첨 ${wonCount}일 = ${maxReapply}건, 사용 ${usedReapply}건)`,
+    })
+  }
+
+  if (usageDate < lottery.startDate || usageDate > lottery.endDate) {
+    return res.status(400).json({
+      error: `사용일은 추첨 기간(${lottery.startDate} ~ ${lottery.endDate}) 안의 날짜로 선택해 주세요.`,
+    })
+  }
+
+  const duplicate = state.applications.some(
+    (a) =>
+      a.lotteryId === lotteryId &&
+      a.employeeId === employeeId &&
+      a.usageDate === usageDate,
+  )
+  if (duplicate) {
+    return res.status(400).json({ error: '같은 사용일로는 한 번만 신청할 수 있습니다.' })
+  }
+
+  const application = {
+    id: uuid(),
+    lotteryId,
+    employeeId,
+    name: name?.trim() ?? '',
+    usageDate,
+    remarks: (remarks ?? '').trim(),
+    status: 'pending',
+    isReapply: true,
     createdAt: new Date().toISOString(),
   }
   const next = await writeStore({
@@ -358,11 +438,85 @@ app.post('/api/lotteries/:id/run', async (req, res) => {
   }
 
   const { updatedApplications } = runLotteryDraw(lottery, state.applications)
+  const vacantDates = getReapplyDates(lottery, updatedApplications)
+  const closedLottery = {
+    ...lottery,
+    status: vacantDates.length > 0 ? 'reapply' : 'closed',
+    vacantDates,
+  }
 
   const next = await writeStore({
     ...state,
-    lotteries: state.lotteries.map((l) => (l.id === id ? { ...l, status: 'closed' } : l)),
+    lotteries: state.lotteries.map((l) => (l.id === id ? closedLottery : l)),
     applications: updatedApplications,
+  })
+
+  return res.json(next)
+})
+
+app.post('/api/lotteries/:id/run-reapply', async (req, res) => {
+  const state = await readStore()
+  const id = req.params.id
+  const lottery = state.lotteries.find((l) => l.id === id)
+
+  if (!lottery) {
+    return res.status(404).json({ error: '추첨 정보를 찾을 수 없습니다.' })
+  }
+
+  if (lottery.status !== 'reapply') {
+    return res.status(400).json({ error: '재신청 중인 추첨이 아닙니다.' })
+  }
+
+  const vacantDates = lottery.vacantDates ?? []
+  const pendingOnVacant = state.applications.filter(
+    (a) =>
+      a.lotteryId === id &&
+      a.status === 'pending' &&
+      vacantDates.includes(a.usageDate),
+  )
+
+  if (pendingOnVacant.length === 0) {
+    return res.status(400).json({ error: '재신청자가 없습니다.' })
+  }
+
+  const datesToDraw = [...new Set(pendingOnVacant.map((a) => a.usageDate))].sort()
+  const { updatedApplications } = runLotteryDraw(lottery, state.applications, {
+    onlyDates: datesToDraw,
+  })
+  const remainingVacant = getReapplyDates(lottery, updatedApplications)
+  const updatedLottery = {
+    ...lottery,
+    status: remainingVacant.length > 0 ? 'reapply' : 'closed',
+    vacantDates: remainingVacant,
+  }
+
+  const next = await writeStore({
+    ...state,
+    lotteries: state.lotteries.map((l) => (l.id === id ? updatedLottery : l)),
+    applications: updatedApplications,
+  })
+
+  return res.json(next)
+})
+
+app.post('/api/lotteries/:id/close-reapply', async (req, res) => {
+  const state = await readStore()
+  const id = req.params.id
+  const lottery = state.lotteries.find((l) => l.id === id)
+
+  if (!lottery) {
+    return res.status(404).json({ error: '추첨 정보를 찾을 수 없습니다.' })
+  }
+
+  if (lottery.status !== 'reapply') {
+    return res.status(400).json({ error: '재신청 중인 추첨이 아닙니다.' })
+  }
+
+  const next = await writeStore({
+    ...state,
+    lotteries: state.lotteries.map((l) =>
+      l.id === id ? { ...l, status: 'closed', vacantDates: [] } : l,
+    ),
   })
 
   return res.json(next)

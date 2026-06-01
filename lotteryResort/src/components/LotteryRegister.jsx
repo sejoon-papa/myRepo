@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useApp } from '../context/AppContext'
-import { getApplicationDays, getWinnersPerDay } from '../utils/lottery'
+import { getApplicationDays, getWinnersPerDay, sortByCreatedAtDesc } from '../utils/lottery'
 
 export default function LotteryRegister() {
   const { state, dispatch } = useApp()
@@ -136,7 +136,7 @@ export default function LotteryRegister() {
                 </tr>
               </thead>
               <tbody>
-                {state.lotteries.map((lottery) => (
+                {sortByCreatedAtDesc(state.lotteries).map((lottery) => (
                   <tr key={lottery.id} className="border-b border-slate-100">
                     <td className="py-3 pr-4 font-medium text-slate-800">{lottery.name}</td>
                     <td className="py-3 pr-4 text-slate-600">

@@ -40,7 +40,7 @@ function AppContent() {
       <div className="flex min-h-screen flex-col bg-slate-50">
         <header className="bg-gradient-to-r from-teal-700 to-cyan-700 px-4 py-5 text-white shadow-lg">
           <div className="mx-auto max-w-4xl">
-            <h1 className="text-2xl font-bold tracking-tight">추첨 시스템</h1>
+            <h1 className="text-2xl font-bold tracking-tight">대한해운 휴양소 추첨</h1>
           </div>
         </header>
         <div className="flex-1">

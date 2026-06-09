@@ -21,7 +21,7 @@ export default function Layout({ activeTab, onTabChange, children }) {
         <div className="mx-auto max-w-4xl px-4 py-5">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <h1 className="text-2xl font-bold tracking-tight">휴양소 추첨 시스템</h1>
+              <h1 className="text-2xl font-bold tracking-tight">대한해운 휴양소 추첨</h1>
               {session && (
                 <p className="mt-1 text-sm text-teal-100">
                   {session.name} ({session.employeeId})

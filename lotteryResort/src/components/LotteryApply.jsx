@@ -292,8 +292,9 @@ export default function LotteryApply() {
       <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
         <h2 className="mb-2 text-lg font-bold text-slate-800">추첨 신청</h2>
         <p className="mb-6 text-sm text-slate-500">
-          추첨별 신청일수에서 당첨일수만큼 뺀 만큼 신청 가능 · 같은 사용일은 중복 신청할 수
-          없습니다 · 대기 상태에서만 수정·취소 가능
+          같은 사용일은 중복 신청할 수 없습니다.
+          <br/>
+          대기 상태에서만 수정·취소 가능
           {selectedLotteryMaxDays != null && (
             <>
               {' '}

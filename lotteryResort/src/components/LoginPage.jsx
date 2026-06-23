@@ -83,7 +83,7 @@ export default function LoginPage() {
               onFocus={handleNameFocus}
               onChange={(e) => setName(e.target.value)}
               placeholder="홍길동"
-              className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-slate-800 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
+              className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-slate-800 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 [-webkit-text-security:disc]"              
             />
           </div>
 

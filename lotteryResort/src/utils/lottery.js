@@ -94,7 +94,7 @@ export function getOpenApplicationCount(myApps) {
 }
 
 export function getReapplyApplicationCount(myApps) {
-  return myApps.filter((a) => a.isReapply).length
+  return myApps.filter((a) => a.isReapply && a.status !== 'lost').length
 }
 
 /** 1차 신청(신청중) 최대 건수 */

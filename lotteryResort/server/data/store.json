@@ -11,11 +11,6 @@
       "isAdmin": false
     },
     {
-      "employeeId": "20307",
-      "name": "허광",
-      "isAdmin": false
-    },
-    {
       "employeeId": "20314",
       "name": "장은정",
       "isAdmin": false
@@ -121,11 +116,6 @@
       "isAdmin": false
     },
     {
-      "employeeId": "21604",
-      "name": "정수인",
-      "isAdmin": false
-    },
-    {
       "employeeId": "21607",
       "name": "류태우",
       "isAdmin": false
@@ -138,11 +128,6 @@
     {
       "employeeId": "21609",
       "name": "홍승현",
-      "isAdmin": false
-    },
-    {
-      "employeeId": "21615",
-      "name": "정서연",
       "isAdmin": false
     },
     {
@@ -211,11 +196,6 @@
       "isAdmin": false
     },
     {
-      "employeeId": "22118",
-      "name": "김솔지",
-      "isAdmin": false
-    },
-    {
       "employeeId": "22119",
       "name": "김경아",
       "isAdmin": false
@@ -228,11 +208,6 @@
     {
       "employeeId": "22123",
       "name": "장민혁",
-      "isAdmin": false
-    },
-    {
-      "employeeId": "22124",
-      "name": "최정현",
       "isAdmin": false
     },
     {
@@ -251,11 +226,6 @@
       "isAdmin": false
     },
     {
-      "employeeId": "22207",
-      "name": "이경제",
-      "isAdmin": false
-    },
-    {
       "employeeId": "22208",
       "name": "오예훈",
       "isAdmin": false
@@ -271,23 +241,8 @@
       "isAdmin": false
     },
     {
-      "employeeId": "22213",
-      "name": "한혜진",
-      "isAdmin": false
-    },
-    {
-      "employeeId": "22304",
-      "name": "김경화",
-      "isAdmin": false
-    },
-    {
       "employeeId": "22307",
       "name": "이서영",
-      "isAdmin": false
-    },
-    {
-      "employeeId": "22311",
-      "name": "김기영",
       "isAdmin": false
     },
     {
@@ -303,11 +258,6 @@
     {
       "employeeId": "22316",
       "name": "임상호",
-      "isAdmin": false
-    },
-    {
-      "employeeId": "22320",
-      "name": "이나영",
       "isAdmin": false
     },
     {
@@ -366,31 +316,6 @@
       "isAdmin": false
     },
     {
-      "employeeId": "22415",
-      "name": "김윤정",
-      "isAdmin": false
-    },
-    {
-      "employeeId": "22419",
-      "name": "박정민",
-      "isAdmin": false
-    },
-    {
-      "employeeId": "22503",
-      "name": "오준호",
-      "isAdmin": false
-    },
-    {
-      "employeeId": "22504",
-      "name": "한인구",
-      "isAdmin": false
-    },
-    {
-      "employeeId": "22505",
-      "name": "이동수",
-      "isAdmin": false
-    },
-    {
       "employeeId": "22506",
       "name": "김재훈",
       "isAdmin": false
@@ -406,18 +331,8 @@
       "isAdmin": false
     },
     {
-      "employeeId": "22511",
-      "name": "윤군주",
-      "isAdmin": false
-    },
-    {
       "employeeId": "22512",
       "name": "오종민",
-      "isAdmin": false
-    },
-    {
-      "employeeId": "22601",
-      "name": "김종윤",
       "isAdmin": false
     },
     {
@@ -448,11 +363,6 @@
     {
       "employeeId": "90008",
       "name": "이은주",
-      "isAdmin": false
-    },
-    {
-      "employeeId": "90011",
-      "name": "송대석",
       "isAdmin": false
     },
     {
@@ -489,509 +399,1586 @@
       "employeeId": "90021",
       "name": "김명익",
       "isAdmin": false
+    },
+    {
+      "employeeId": "22605",
+      "name": "안희진",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "22606",
+      "name": "김수현",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "90022",
+      "name": "심수용",
+      "isAdmin": false
+    },
+    {
+      "employeeId": "90023",
+      "name": "서민준",
+      "isAdmin": false
     }
   ],
   "lotteries": [
     {
-      "id": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "name": "테스트",
-      "startDate": "2026-07-04",
-      "endDate": "2026-07-08",
+      "id": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "name": "2026년 하계 휴양소 추첨",
+      "startDate": "2026-07-17",
+      "endDate": "2026-08-22",
       "applicationDays": 2,
       "winnersPerDay": 2,
-      "status": "closed",
-      "createdAt": "2026-05-27T05:30:02.792Z"
-    },
-    {
-      "id": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "name": "테스트 재신청 기능",
-      "startDate": "2026-06-14",
-      "endDate": "2026-06-20",
-      "applicationDays": 2,
-      "winnersPerDay": 2,
-      "status": "closed",
-      "createdAt": "2026-06-01T06:24:07.634Z",
-      "vacantDates": []
+      "status": "reapply",
+      "createdAt": "2026-06-22T09:00:00.829Z",
+      "vacantDates": [
+        "2026-07-19",
+        "2026-08-13"
+      ]
     }
   ],
   "applications": [
     {
-      "id": "76bb56d6-e24f-49ce-81c9-ed0fcb843965",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "21508",
-      "name": "박석훈",
-      "usageDate": "2026-07-04",
-      "remarks": "",
-      "status": "won",
-      "createdAt": "2026-05-27T05:31:07.664Z"
+      "id": "c6282cf4-65c9-4fff-a9b6-67a603fe9a74",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22209",
+      "name": "박진혁",
+      "usageDate": "2026-07-25",
+      "remarks": "제발 저요ㅠㅠ",
+      "status": "lost",
+      "createdAt": "2026-06-22T09:17:34.749Z"
     },
     {
-      "id": "08316148-9153-4a5c-baff-7b47613408be",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "21508",
-      "name": "박석훈",
-      "usageDate": "2026-07-06",
-      "remarks": "",
+      "id": "364ba03f-655d-4127-914d-3622964247fc",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21602",
+      "name": "김홍욱",
+      "usageDate": "2026-07-29",
+      "remarks": "[2박]\n\n* Check in : 7/29\n* Check out : 7/31",
       "status": "won",
-      "createdAt": "2026-05-27T05:31:23.722Z"
+      "createdAt": "2026-06-22T09:19:05.253Z"
     },
     {
-      "id": "83cdaf97-d4ad-4ed9-9382-fd0578581398",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "id": "4c0ddd76-2c3b-496e-8e34-7add78c72c62",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22209",
+      "name": "박진혁",
+      "usageDate": "2026-08-22",
+      "remarks": "제발 저요ㅜㅜ",
+      "status": "lost",
+      "createdAt": "2026-06-22T09:19:26.825Z"
+    },
+    {
+      "id": "43f5ff75-5838-4e8b-96a1-9f656ca4a48a",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
       "employeeId": "21507",
       "name": "김해용",
-      "usageDate": "2026-07-04",
+      "usageDate": "2026-07-25",
       "remarks": "",
-      "status": "won",
-      "createdAt": "2026-05-27T05:50:02.874Z"
+      "status": "lost",
+      "createdAt": "2026-06-22T09:52:12.324Z"
     },
     {
-      "id": "42a20105-4feb-4aa2-97f7-66e7e4507bc4",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
+      "id": "2e117ce4-4a9f-4da8-a075-95dae6f7ba3c",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
       "employeeId": "21507",
       "name": "김해용",
-      "usageDate": "2026-07-05",
+      "usageDate": "2026-07-24",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-22T09:55:39.919Z"
+    },
+    {
+      "id": "78a2b808-5ab7-4a59-81ab-6021eeb8b3c6",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22412",
+      "name": "권기석",
+      "usageDate": "2026-07-24",
+      "remarks": "2박",
+      "status": "won",
+      "createdAt": "2026-06-22T22:59:50.229Z"
+    },
+    {
+      "id": "d235e6b6-8d4d-4210-903e-aea406b81094",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22412",
+      "name": "권기석",
+      "usageDate": "2026-07-25",
       "remarks": "",
       "status": "won",
-      "createdAt": "2026-05-27T05:50:07.536Z"
+      "createdAt": "2026-06-22T23:00:21.291Z"
     },
     {
-      "id": "b49ceadb-caac-47ce-8983-9b75f8037a84",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "21811",
-      "name": "하승수",
-      "usageDate": "2026-07-04",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-05-27T05:52:31.499Z"
-    },
-    {
-      "id": "fe535a2d-ca5c-4d91-af9b-5c43258e7c70",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "21811",
-      "name": "하승수",
-      "usageDate": "2026-07-05",
-      "remarks": "",
-      "status": "won",
-      "createdAt": "2026-05-27T05:52:34.691Z"
-    },
-    {
-      "id": "8941c2c6-57f7-41a3-907d-d5627041fb71",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "21808",
-      "name": "성민규",
-      "usageDate": "2026-07-05",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-05-27T06:24:20.429Z"
-    },
-    {
-      "id": "74abaf78-0c77-4330-a154-a6dfdd83a942",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "21808",
-      "name": "성민규",
-      "usageDate": "2026-07-06",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-05-27T06:24:23.591Z"
-    },
-    {
-      "id": "830e551c-fc94-4b60-884d-05a8f9173df7",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "21805",
-      "name": "김현성",
-      "usageDate": "2026-07-07",
-      "remarks": "",
-      "status": "won",
-      "createdAt": "2026-05-27T06:25:11.852Z"
-    },
-    {
-      "id": "43164860-bbc0-46a9-9b9b-8a8bec59ac69",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "21805",
-      "name": "김현성",
-      "usageDate": "2026-07-08",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-05-27T06:25:16.657Z"
-    },
-    {
-      "id": "4aa2e8a4-581d-426e-bf23-aa089f45de66",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "21615",
-      "name": "정서연",
-      "usageDate": "2026-07-06",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-05-27T06:26:08.010Z"
-    },
-    {
-      "id": "15e29c7d-c43f-4ee8-aa8f-24760478850c",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "21615",
-      "name": "정서연",
-      "usageDate": "2026-07-07",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-05-27T06:26:11.457Z"
-    },
-    {
-      "id": "e10d6893-3a02-4da4-9f9f-acb223b6d5bd",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "21512",
-      "name": "유리",
-      "usageDate": "2026-07-06",
-      "remarks": "",
-      "status": "won",
-      "createdAt": "2026-05-27T06:26:47.485Z"
-    },
-    {
-      "id": "b62d3554-7e26-48c5-8963-72cbdeeb1e87",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "21512",
-      "name": "유리",
-      "usageDate": "2026-07-08",
-      "remarks": "",
-      "status": "won",
-      "createdAt": "2026-05-27T06:26:50.588Z"
-    },
-    {
-      "id": "5eea3772-347f-4c30-b41d-6c3247daa52b",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "90021",
-      "name": "김명익",
-      "usageDate": "2026-07-04",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-05-27T06:28:20.532Z"
-    },
-    {
-      "id": "8efbae54-497d-4ab9-a14b-87b15ab56070",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "90021",
-      "name": "김명익",
-      "usageDate": "2026-07-07",
-      "remarks": "",
-      "status": "won",
-      "createdAt": "2026-05-27T06:28:24.729Z"
-    },
-    {
-      "id": "58bbbd01-65ad-4e2d-8aeb-17cccb61df45",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "90017",
-      "name": "엄기현",
-      "usageDate": "2026-07-05",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-05-27T06:29:21.895Z"
-    },
-    {
-      "id": "df855b9f-baf3-4496-adc5-a175fd464db8",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "90017",
-      "name": "엄기현",
-      "usageDate": "2026-07-06",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-05-27T06:29:24.888Z"
-    },
-    {
-      "id": "395222a5-6ddb-4de7-bb1d-80e3d31fd56b",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "22403",
-      "name": "임미란",
-      "usageDate": "2026-07-07",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-05-27T06:30:15.140Z"
-    },
-    {
-      "id": "aaa12ed5-6c4d-45bf-a755-cee7ac30fa42",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "22403",
-      "name": "임미란",
-      "usageDate": "2026-07-08",
-      "remarks": "",
-      "status": "won",
-      "createdAt": "2026-05-27T06:30:18.100Z"
-    },
-    {
-      "id": "eb5f9602-06c5-4d2b-ba70-f1f94f074089",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "22402",
-      "name": "박요섭",
-      "usageDate": "2026-07-04",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-05-27T06:30:44.347Z"
-    },
-    {
-      "id": "96873080-241d-4326-bf73-b126c1ccda55",
-      "lotteryId": "1e8f1bc7-2fbb-47ce-9964-96a89d71015e",
-      "employeeId": "22402",
-      "name": "박요섭",
-      "usageDate": "2026-07-08",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-05-27T06:30:47.328Z"
-    },
-    {
-      "id": "8ac52c01-e939-4500-8989-ad7f56270132",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "21508",
-      "name": "박석훈",
-      "usageDate": "2026-06-14",
-      "remarks": "",
-      "status": "won",
-      "createdAt": "2026-06-01T06:24:30.528Z"
-    },
-    {
-      "id": "5a86c14d-ac14-4d3e-9c68-1c3bc4a01f63",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "21508",
-      "name": "박석훈",
-      "usageDate": "2026-06-15",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-06-01T06:24:34.048Z"
-    },
-    {
-      "id": "f1e56f5e-3c53-4d48-a784-e3ce6e88c8cd",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "21507",
-      "name": "김해용",
-      "usageDate": "2026-06-14",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-06-01T06:29:13.509Z"
-    },
-    {
-      "id": "584cb5d7-8a6a-4dd0-98b3-06a2b284ed75",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "21507",
-      "name": "김해용",
-      "usageDate": "2026-06-15",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-06-01T06:29:16.834Z"
-    },
-    {
-      "id": "e3b4b8a6-b4fc-4e80-894c-30e319c485a4",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
+      "id": "6ca9c4a4-0058-480d-a5a6-c1448a6a539e",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
       "employeeId": "20212",
       "name": "이혜영",
-      "usageDate": "2026-06-14",
+      "usageDate": "2026-08-11",
       "remarks": "",
       "status": "won",
-      "createdAt": "2026-06-01T06:29:52.097Z"
+      "createdAt": "2026-06-22T23:02:26.809Z"
     },
     {
-      "id": "0f464944-e6d7-42ed-ae21-138ff28d678f",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
+      "id": "2894a626-c1b3-4485-a4e2-5101b72a6e1b",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22330",
+      "name": "이동혁",
+      "usageDate": "2026-07-31",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-22T23:02:34.839Z"
+    },
+    {
+      "id": "ddee5c8e-5a16-4d14-b321-0a650b619334",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
       "employeeId": "20212",
       "name": "이혜영",
-      "usageDate": "2026-06-15",
+      "usageDate": "2026-08-12",
       "remarks": "",
       "status": "won",
-      "createdAt": "2026-06-01T06:29:55.200Z"
+      "createdAt": "2026-06-22T23:02:35.695Z"
     },
     {
-      "id": "1401f166-9c50-4d17-851f-c361930af21c",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "20307",
-      "name": "허광",
-      "usageDate": "2026-06-15",
-      "remarks": "",
-      "status": "won",
-      "createdAt": "2026-06-01T06:30:20.592Z"
-    },
-    {
-      "id": "b2074ddf-c73d-4fab-8c3a-e73595079dfb",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "20307",
-      "name": "허광",
-      "usageDate": "2026-06-16",
-      "remarks": "",
-      "status": "won",
-      "createdAt": "2026-06-01T06:30:24.358Z"
-    },
-    {
-      "id": "5bee6dcf-de74-4a0b-a64e-c0a436a07e7c",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "20314",
-      "name": "장은정",
-      "usageDate": "2026-06-18",
-      "remarks": "",
-      "status": "won",
-      "createdAt": "2026-06-01T06:41:22.110Z"
-    },
-    {
-      "id": "92769406-dccd-423a-84b1-1a65eec966e3",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "20314",
-      "name": "장은정",
-      "usageDate": "2026-06-19",
+      "id": "a415505b-1709-4a45-8118-8ebee5123949",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22330",
+      "name": "이동혁",
+      "usageDate": "2026-08-01",
       "remarks": "",
       "status": "lost",
-      "createdAt": "2026-06-01T06:41:25.871Z"
+      "createdAt": "2026-06-22T23:02:41.065Z"
     },
     {
-      "id": "9a71af18-7a5f-4786-8fe7-d05afe0c813c",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "20403",
-      "name": "임성묵",
-      "usageDate": "2026-06-19",
+      "id": "abca54e3-48c9-4da4-a524-c7f036ed4a7e",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22328",
+      "name": "이정연",
+      "usageDate": "2026-07-26",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-22T23:03:35.009Z"
+    },
+    {
+      "id": "0b271721-75c3-4eb5-94ee-26c99774cedb",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22403",
+      "name": "임미란",
+      "usageDate": "2026-08-08",
       "remarks": "",
       "status": "won",
-      "createdAt": "2026-06-01T06:41:48.808Z"
+      "createdAt": "2026-06-22T23:03:39.936Z"
     },
     {
-      "id": "48229100-449f-4289-9f0f-f898a7087615",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "20403",
-      "name": "임성묵",
-      "usageDate": "2026-06-20",
+      "id": "13033f53-9b87-4b41-b9bc-3630e8765286",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22403",
+      "name": "임미란",
+      "usageDate": "2026-07-25",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-22T23:04:12.859Z"
+    },
+    {
+      "id": "6539be99-78f9-493e-bf74-6389e32d0c39",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21816",
+      "name": "이일특",
+      "usageDate": "2026-08-01",
       "remarks": "",
       "status": "won",
-      "createdAt": "2026-06-01T06:41:53.447Z"
+      "createdAt": "2026-06-22T23:07:02.534Z"
     },
     {
-      "id": "fe9e693f-e208-49fe-a5fd-9088c2626c31",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
+      "id": "93730805-c2bb-4428-b23b-d1df1e416f6c",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21816",
+      "name": "이일특",
+      "usageDate": "2026-08-02",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-22T23:07:52.707Z"
+    },
+    {
+      "id": "81435439-3b04-47e0-9e9c-5d0bf63addee",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22204",
+      "name": "김범준",
+      "usageDate": "2026-07-17",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-22T23:11:54.948Z"
+    },
+    {
+      "id": "456ae33c-2507-4f9e-b7cc-b99a00685df0",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22204",
+      "name": "김범준",
+      "usageDate": "2026-07-18",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-22T23:12:13.181Z"
+    },
+    {
+      "id": "6facb1e8-bac6-42f6-bf99-dfc6e15c1070",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
       "employeeId": "20623",
       "name": "안치만",
-      "usageDate": "2026-06-19",
-      "remarks": "",
-      "status": "won",
-      "createdAt": "2026-06-01T06:42:48.087Z"
+      "usageDate": "2026-08-02",
+      "remarks": "1박",
+      "status": "lost",
+      "createdAt": "2026-06-22T23:13:23.919Z"
     },
     {
-      "id": "e098ad11-15a7-408a-b7d2-7031699c376c",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
+      "id": "8511d77b-0c86-4e25-8641-f67c50589f83",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22512",
+      "name": "오종민",
+      "usageDate": "2026-08-15",
+      "remarks": "8/15~8/17 2박",
+      "status": "lost",
+      "createdAt": "2026-06-22T23:19:01.466Z"
+    },
+    {
+      "id": "9743ff78-3dde-4dde-8c60-a8e59cb8e1f2",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22328",
+      "name": "이정연",
+      "usageDate": "2026-08-22",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-22T23:28:29.847Z"
+    },
+    {
+      "id": "b70e76e9-2e6b-47b9-8ea0-d3571beb15c0",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21913",
+      "name": "채상천",
+      "usageDate": "2026-08-09",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-22T23:39:02.596Z"
+    },
+    {
+      "id": "75e91b04-4e25-4db0-8e83-f0fed7a1fdf9",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21913",
+      "name": "채상천",
+      "usageDate": "2026-08-10",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-22T23:39:12.833Z"
+    },
+    {
+      "id": "8da9dc76-1aae-41f4-822c-bae0b864ecf6",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20904",
+      "name": "김승원",
+      "usageDate": "2026-07-31",
+      "remarks": "연박 요청 (7/31 ~ 8/2)",
+      "status": "lost",
+      "createdAt": "2026-06-22T23:44:52.758Z"
+    },
+    {
+      "id": "491daed7-33a0-4179-8e29-2e70b606f183",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20904",
+      "name": "김승원",
+      "usageDate": "2026-08-01",
+      "remarks": "연박 요청 (7/31 - 8/2)",
+      "status": "lost",
+      "createdAt": "2026-06-22T23:45:27.932Z"
+    },
+    {
+      "id": "d6bce318-edcc-44a2-9eda-68dfba610348",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21804",
+      "name": "홍은채",
+      "usageDate": "2026-08-05",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-22T23:48:00.524Z"
+    },
+    {
+      "id": "4844b6bf-b2e6-43c4-8349-b20df19a9542",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21804",
+      "name": "홍은채",
+      "usageDate": "2026-08-06",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-22T23:48:42.739Z"
+    },
+    {
+      "id": "4331766e-4a10-4fa5-9ee6-c854b54b6bd3",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22002",
+      "name": "하수홍",
+      "usageDate": "2026-07-27",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-22T23:56:58.232Z"
+    },
+    {
+      "id": "6260e711-0602-48fc-bf59-e2f8f3e90389",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22008",
+      "name": "김성재",
+      "usageDate": "2026-08-16",
+      "remarks": "8/16~8/18 연박으로 신청합니다.",
+      "status": "lost",
+      "createdAt": "2026-06-22T23:57:13.339Z"
+    },
+    {
+      "id": "c113f84b-2345-4b3e-8d44-ceeec6d9a441",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22008",
+      "name": "김성재",
+      "usageDate": "2026-08-17",
+      "remarks": "8/16~8/18 연박으로 신청합니다.",
+      "status": "won",
+      "createdAt": "2026-06-22T23:57:24.708Z"
+    },
+    {
+      "id": "c87d0717-512c-4157-b356-cbd69ab697e0",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22329",
+      "name": "장민교",
+      "usageDate": "2026-08-01",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-22T23:58:09.715Z"
+    },
+    {
+      "id": "d4ec5f45-c9fc-499c-a2a3-d209e3af4e78",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22016",
+      "name": "박솔민",
+      "usageDate": "2026-07-31",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T00:02:01.306Z"
+    },
+    {
+      "id": "1caceba9-90a4-4032-bf09-3517a22fad22",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22016",
+      "name": "박솔민",
+      "usageDate": "2026-08-01",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T00:02:20.214Z"
+    },
+    {
+      "id": "83a3c087-9c20-4657-a843-659cfe623195",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22109",
+      "name": "안홍천",
+      "usageDate": "2026-08-15",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T00:04:46.104Z"
+    },
+    {
+      "id": "0456356a-7ca8-4137-9433-a3cc50a64afb",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22109",
+      "name": "안홍천",
+      "usageDate": "2026-08-16",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T00:04:52.201Z"
+    },
+    {
+      "id": "7374c809-6d88-418b-965d-e7f8f4755812",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21602",
+      "name": "김홍욱",
+      "usageDate": "2026-07-30",
+      "remarks": "[2박] \n* Check in : 7/29 \n* Check out : 7/31",
+      "status": "won",
+      "createdAt": "2026-06-23T00:05:27.445Z"
+    },
+    {
+      "id": "28a09470-7b42-4a02-b0d4-32eedb988092",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21422",
+      "name": "이의경",
+      "usageDate": "2026-07-30",
+      "remarks": "7월 30일(목) ~ 7월 31일(금) 2박 8월 1일(토) 퇴실",
+      "status": "won",
+      "createdAt": "2026-06-23T00:07:14.027Z"
+    },
+    {
+      "id": "7df84101-8e88-4f28-a4f8-a2b3896e84db",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22329",
+      "name": "장민교",
+      "usageDate": "2026-08-08",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T00:08:57.235Z"
+    },
+    {
+      "id": "fc696782-b51a-46a1-bec0-261fac05d06c",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22208",
+      "name": "오예훈",
+      "usageDate": "2026-08-01",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T00:16:18.287Z"
+    },
+    {
+      "id": "b56e88df-368c-4595-8954-ee828d162a73",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21413",
+      "name": "허준무",
+      "usageDate": "2026-07-19",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T00:16:19.021Z"
+    },
+    {
+      "id": "5c916b1f-04f6-4bbd-a534-020ee2f1fc7c",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21413",
+      "name": "허준무",
+      "usageDate": "2026-07-20",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T00:16:35.077Z"
+    },
+    {
+      "id": "93c1631f-58fe-45eb-a688-5ecb29e3d29c",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21608",
+      "name": "정한솔",
+      "usageDate": "2026-07-26",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T00:17:49.114Z"
+    },
+    {
+      "id": "6a0e8b4a-94ee-4614-95d9-765ac9c0eec6",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21608",
+      "name": "정한솔",
+      "usageDate": "2026-07-27",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T00:18:02.955Z"
+    },
+    {
+      "id": "3851b21d-98e0-474c-b3a3-386326c9f06a",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22605",
+      "name": "안희진",
+      "usageDate": "2026-08-22",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T00:25:29.711Z"
+    },
+    {
+      "id": "13cb4bf3-aeb4-4a6b-97a8-973a2953c85d",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22605",
+      "name": "안희진",
+      "usageDate": "2026-08-21",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T00:26:00.066Z"
+    },
+    {
+      "id": "34f9b5ab-e943-4397-9f05-d6c469e4459e",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21422",
+      "name": "이의경",
+      "usageDate": "2026-07-31",
+      "remarks": "7.30 ~ 7.31",
+      "status": "won",
+      "createdAt": "2026-06-23T00:26:04.116Z"
+    },
+    {
+      "id": "3dc0a85b-76d4-489b-9638-21cdb813a021",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22332",
+      "name": "최준영",
+      "usageDate": "2026-08-22",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T00:31:16.950Z"
+    },
+    {
+      "id": "dd830ef9-a60d-4680-839b-2dbfa96c5778",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22332",
+      "name": "최준영",
+      "usageDate": "2026-07-18",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T00:32:34.529Z"
+    },
+    {
+      "id": "d614038c-1809-4fde-a7e4-be4d89c3050a",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90023",
+      "name": "서민준",
+      "usageDate": "2026-08-15",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T00:56:09.871Z"
+    },
+    {
+      "id": "71913975-f505-4997-b69a-8d799578d9da",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22119",
+      "name": "김경아",
+      "usageDate": "2026-07-17",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T00:56:33.608Z"
+    },
+    {
+      "id": "dd1735d3-2a0c-4319-bae7-bfe1bd060f4c",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22122",
+      "name": "류윤지",
+      "usageDate": "2026-07-17",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T01:09:42.859Z"
+    },
+    {
+      "id": "33942c89-b381-451d-ab69-9176eee6f03a",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22122",
+      "name": "류윤지",
+      "usageDate": "2026-07-18",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T01:09:53.633Z"
+    },
+    {
+      "id": "09ddcbfd-0d3d-4e05-b418-39d3ad567ff8",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90014",
+      "name": "이현민",
+      "usageDate": "2026-08-22",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T01:13:11.344Z"
+    },
+    {
+      "id": "b6c33713-f177-468f-bb3c-661662225497",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22402",
+      "name": "박요섭",
+      "usageDate": "2026-07-25",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T01:25:51.989Z"
+    },
+    {
+      "id": "45209434-0451-4755-b2df-79da895f008e",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22402",
+      "name": "박요섭",
+      "usageDate": "2026-07-26",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T01:31:41.907Z"
+    },
+    {
+      "id": "958c4964-c7fb-46f0-b189-d9561bc548f3",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22313",
+      "name": "이재은",
+      "usageDate": "2026-07-17",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T01:41:01.257Z"
+    },
+    {
+      "id": "aa859de0-a0ed-4e00-92c9-dbfe5cb191e1",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22313",
+      "name": "이재은",
+      "usageDate": "2026-08-07",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T01:41:49.795Z"
+    },
+    {
+      "id": "2a4adfa7-78bb-4218-b109-af00475d3dc8",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21811",
+      "name": "하승수",
+      "usageDate": "2026-08-01",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T02:25:38.490Z"
+    },
+    {
+      "id": "84bee6eb-dd99-4a00-b6bb-e5f602dcf29f",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22307",
+      "name": "이서영",
+      "usageDate": "2026-08-08",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T02:44:55.331Z"
+    },
+    {
+      "id": "d60d867e-ac11-4fb1-a0f9-948dd4d544ec",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21811",
+      "name": "하승수",
+      "usageDate": "2026-07-17",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T02:45:04.557Z"
+    },
+    {
+      "id": "5f863e14-15dd-4c35-b836-2b59c5be3b62",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22110",
+      "name": "김아람",
+      "usageDate": "2026-08-22",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T04:16:35.245Z"
+    },
+    {
+      "id": "807dbf42-4ec9-42ef-9ff4-d4475fee3525",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21409",
+      "name": "경성현",
+      "usageDate": "2026-08-16",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T05:01:55.587Z"
+    },
+    {
+      "id": "84daa53b-23eb-4883-bdb9-938a9bbdea39",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21409",
+      "name": "경성현",
+      "usageDate": "2026-08-15",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T05:02:13.951Z"
+    },
+    {
+      "id": "6ed6cdae-625d-4843-8615-d933f0daaed1",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21805",
+      "name": "김현성",
+      "usageDate": "2026-07-17",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T05:26:37.317Z"
+    },
+    {
+      "id": "346e0e28-8072-45d6-aa78-9b9f6fac7dad",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21201",
+      "name": "이인영",
+      "usageDate": "2026-07-17",
+      "remarks": "7/17~7/18 1박2일신청",
+      "status": "won",
+      "createdAt": "2026-06-23T05:35:28.211Z"
+    },
+    {
+      "id": "aa529cff-0a10-4ee9-8300-97327fa76a74",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21201",
+      "name": "이인영",
+      "usageDate": "2026-07-30",
+      "remarks": "7/30-7/31 1박2일신청",
+      "status": "lost",
+      "createdAt": "2026-06-23T05:54:17.589Z"
+    },
+    {
+      "id": "3e3a5415-9e34-4118-bc06-e625fde2cfb8",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22210",
+      "name": "윤희성",
+      "usageDate": "2026-08-15",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T06:31:26.825Z"
+    },
+    {
+      "id": "014c57a8-bf76-4071-af6f-68c73f3c5fac",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22210",
+      "name": "윤희성",
+      "usageDate": "2026-08-16",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T06:31:34.178Z"
+    },
+    {
+      "id": "0ba5289e-e2d6-4339-98eb-9c3bb868540f",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22208",
+      "name": "오예훈",
+      "usageDate": "2026-07-19",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T06:36:31.122Z"
+    },
+    {
+      "id": "22b3c91f-18bc-4b61-ab73-cfefbed112dd",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21821",
+      "name": "이창헌",
+      "usageDate": "2026-08-01",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T06:37:17.085Z"
+    },
+    {
+      "id": "b06b1698-56e0-49b1-9681-fe2524d4b1bb",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21821",
+      "name": "이창헌",
+      "usageDate": "2026-08-02",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T06:38:15.198Z"
+    },
+    {
+      "id": "5fca4f91-16a7-4f05-89c5-a968dec1f796",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21805",
+      "name": "김현성",
+      "usageDate": "2026-07-18",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T06:41:41.198Z"
+    },
+    {
+      "id": "21ede6d7-34d5-404f-8e62-b1b63a82fbaa",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90017",
+      "name": "엄기현",
+      "usageDate": "2026-08-16",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T07:01:08.263Z"
+    },
+    {
+      "id": "be3258f1-583b-4046-a7e9-2d98e9ad9a04",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90017",
+      "name": "엄기현",
+      "usageDate": "2026-08-15",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T07:01:22.096Z"
+    },
+    {
+      "id": "bf842a76-98d5-4195-9df4-12e685b2fd83",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21808",
+      "name": "성민규",
+      "usageDate": "2026-07-17",
+      "remarks": "7/17~18 2박 신청",
+      "status": "lost",
+      "createdAt": "2026-06-23T07:05:50.856Z"
+    },
+    {
+      "id": "a73cc8e4-1039-460f-8389-229c37924b62",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21808",
+      "name": "성민규",
+      "usageDate": "2026-07-18",
+      "remarks": "7/17~18 2박 신청",
+      "status": "lost",
+      "createdAt": "2026-06-23T07:06:11.239Z"
+    },
+    {
+      "id": "a076d7b8-414b-4aeb-9490-871ad3465719",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20803",
+      "name": "배원호",
+      "usageDate": "2026-07-23",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T07:25:21.211Z"
+    },
+    {
+      "id": "463b797f-d7e3-4f0f-b22c-cba21115a373",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20803",
+      "name": "배원호",
+      "usageDate": "2026-07-24",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T07:25:31.549Z"
+    },
+    {
+      "id": "c3f967b6-d415-44e7-9a28-5e1204e4169c",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
       "employeeId": "20623",
       "name": "안치만",
-      "usageDate": "2026-06-15",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-06-01T06:42:53.990Z"
-    },
-    {
-      "id": "4782558f-be34-477f-98a3-7f9a59d7e56c",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "20702",
-      "name": "한정헌",
-      "usageDate": "2026-06-14",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-06-01T06:43:30.934Z"
-    },
-    {
-      "id": "754ff7b3-9540-4cc3-b3bf-0634ca5355eb",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "20702",
-      "name": "한정헌",
-      "usageDate": "2026-06-15",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-06-01T06:43:40.622Z"
-    },
-    {
-      "id": "699d2f71-498f-42e8-b9a9-4f747466d16d",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "90021",
-      "name": "김명익",
-      "usageDate": "2026-06-19",
-      "remarks": "",
-      "status": "lost",
-      "createdAt": "2026-06-01T06:44:12.499Z"
-    },
-    {
-      "id": "a7b90a72-52f5-4544-9ae5-f17a868f61fe",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "21507",
-      "name": "김해용",
-      "usageDate": "2026-06-20",
-      "remarks": "",
+      "usageDate": "2026-08-03",
+      "remarks": "1박",
       "status": "won",
-      "isReapply": true,
-      "createdAt": "2026-06-01T07:12:14.419Z"
+      "createdAt": "2026-06-23T07:26:09.464Z"
     },
     {
-      "id": "90dcb667-b07b-4ed0-a499-0463727370b0",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "21507",
-      "name": "김해용",
-      "usageDate": "2026-06-17",
-      "remarks": "",
-      "status": "won",
-      "isReapply": true,
-      "createdAt": "2026-06-01T07:12:19.056Z"
-    },
-    {
-      "id": "d5174e3d-9a6e-48d1-9761-989ef0845d75",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
+      "id": "fa25130e-965a-4797-9723-92a6d74aeb79",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
       "employeeId": "21508",
       "name": "박석훈",
-      "usageDate": "2026-06-16",
+      "usageDate": "2026-08-18",
       "remarks": "",
       "status": "won",
-      "isReapply": true,
-      "createdAt": "2026-06-01T07:13:55.521Z"
+      "createdAt": "2026-06-23T07:27:13.255Z"
     },
     {
-      "id": "02b2a1f6-bcf6-42ab-9112-c909c5b13832",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "20712",
-      "name": "최희대",
-      "usageDate": "2026-06-17",
+      "id": "ec8aef23-ddce-4b6f-9799-fb1e055b7c2b",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21508",
+      "name": "박석훈",
+      "usageDate": "2026-08-19",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T07:27:22.014Z"
+    },
+    {
+      "id": "ebf2a2d6-9d91-4f5f-9889-f5ae4f32061d",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22002",
+      "name": "하수홍",
+      "usageDate": "2026-07-26",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T07:42:16.389Z"
+    },
+    {
+      "id": "bc0b716c-3e20-43d9-ae27-dfc839bab39b",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90023",
+      "name": "서민준",
+      "usageDate": "2026-08-14",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-23T07:54:55.613Z"
+    },
+    {
+      "id": "7294b1ae-57a6-4f39-8c5b-d00927072024",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22126",
+      "name": "박상민",
+      "usageDate": "2026-08-15",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T08:18:46.777Z"
+    },
+    {
+      "id": "d7f2382a-6504-480d-9aef-01e876de84ca",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22126",
+      "name": "박상민",
+      "usageDate": "2026-08-16",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T08:19:00.134Z"
+    },
+    {
+      "id": "e9b35d4c-1128-4f86-a2ea-40705608ea8b",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22110",
+      "name": "김아람",
+      "usageDate": "2026-08-08",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T08:28:16.224Z"
+    },
+    {
+      "id": "319ef6ef-1f1e-4b94-a4e0-0849540e844a",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22512",
+      "name": "오종민",
+      "usageDate": "2026-08-16",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T22:52:45.404Z"
+    },
+    {
+      "id": "d0c360e3-07dd-416d-9232-7f134079c93f",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22007",
+      "name": "권동환",
+      "usageDate": "2026-07-24",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T23:54:33.542Z"
+    },
+    {
+      "id": "7aa7fd8c-49aa-4391-9384-5b774c117717",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22007",
+      "name": "권동환",
+      "usageDate": "2026-07-25",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-23T23:54:40.869Z"
+    },
+    {
+      "id": "e3095b45-fd91-402c-b3cf-009fcb1d4a64",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90003",
+      "name": "김진환",
+      "usageDate": "2026-08-15",
+      "remarks": "2026-08-15~2026-08-17(2박 신청)",
+      "status": "lost",
+      "createdAt": "2026-06-23T23:58:41.227Z"
+    },
+    {
+      "id": "7593e008-5b4d-4caf-ac2e-991d4d764c1f",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90021",
+      "name": "김명익",
+      "usageDate": "2026-08-01",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-24T01:20:17.364Z"
+    },
+    {
+      "id": "18155071-8059-414a-80b0-9f0e8afe0555",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20808",
+      "name": "서석현",
+      "usageDate": "2026-08-22",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-24T05:47:51.509Z"
+    },
+    {
+      "id": "373fc3bd-cca2-4dbf-a85b-e2be5851db31",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22508",
+      "name": "정일권",
+      "usageDate": "2026-08-15",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-24T06:10:14.503Z"
+    },
+    {
+      "id": "2a53ad20-0d17-49b3-a387-17c4395e2fd2",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22508",
+      "name": "정일권",
+      "usageDate": "2026-08-16",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-24T06:11:01.457Z"
+    },
+    {
+      "id": "1888835e-fb1e-4aed-9534-d22c66813cad",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22123",
+      "name": "장민혁",
+      "usageDate": "2026-07-31",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-24T07:59:56.452Z"
+    },
+    {
+      "id": "8ccb704b-cb6e-48bb-bfdf-f6d757ea4ca1",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22123",
+      "name": "장민혁",
+      "usageDate": "2026-08-01",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-24T08:47:47.150Z"
+    },
+    {
+      "id": "4cc6b60f-9900-4866-b159-1582412199c0",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90013",
+      "name": "설유진",
+      "usageDate": "2026-08-16",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-24T09:03:32.058Z"
+    },
+    {
+      "id": "83aefe78-9f95-405f-a0fc-1195af717cc0",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90013",
+      "name": "설유진",
+      "usageDate": "2026-07-18",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-24T09:05:29.906Z"
+    },
+    {
+      "id": "cf50e5fd-a12d-4695-a888-03085f087274",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90002",
+      "name": "김경수",
+      "usageDate": "2026-07-24",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-24T09:42:01.226Z"
+    },
+    {
+      "id": "1450dfdb-4e3e-404a-b6c6-51f9033d9315",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90002",
+      "name": "김경수",
+      "usageDate": "2026-08-15",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-24T09:42:09.718Z"
+    },
+    {
+      "id": "89bbefe0-9723-4816-a8ff-69deb00e32a8",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22203",
+      "name": "안세명",
+      "usageDate": "2026-07-25",
+      "remarks": "7/25(토)~7/26(일) 1박",
+      "status": "won",
+      "createdAt": "2026-06-24T23:25:03.277Z"
+    },
+    {
+      "id": "7a953f19-94be-45c9-a792-0baf50774c96",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22203",
+      "name": "안세명",
+      "usageDate": "2026-07-18",
+      "remarks": "7/18(토)~7/19(일) 1박",
+      "status": "lost",
+      "createdAt": "2026-06-24T23:54:29.036Z"
+    },
+    {
+      "id": "b701cde9-070a-4270-b481-1f2436d90af4",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20706",
+      "name": "전원규",
+      "usageDate": "2026-08-16",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-25T07:34:12.519Z"
+    },
+    {
+      "id": "0c1d31dd-62f8-4595-bb97-a49966b61b86",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20706",
+      "name": "전원규",
+      "usageDate": "2026-08-17",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-25T07:34:34.103Z"
+    },
+    {
+      "id": "a6dba4c8-2de3-4cdf-b1e4-2c56bec12f5e",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22312",
+      "name": "이동건",
+      "usageDate": "2026-08-14",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-25T07:53:05.370Z"
+    },
+    {
+      "id": "8b2ebc7d-94cc-4199-8429-b7cee4c9b2f1",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22312",
+      "name": "이동건",
+      "usageDate": "2026-08-13",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-25T07:53:19.546Z"
+    },
+    {
+      "id": "83ca138a-4576-4a5e-be36-88327caf4a7e",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90018",
+      "name": "구준모",
+      "usageDate": "2026-08-07",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-25T08:23:18.446Z"
+    },
+    {
+      "id": "35f2cb75-5d17-4606-b363-5e029904aca7",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90018",
+      "name": "구준모",
+      "usageDate": "2026-08-08",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-25T08:23:25.753Z"
+    },
+    {
+      "id": "264bb1e5-c168-4d89-9980-0624bf2e29f8",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90014",
+      "name": "이현민",
+      "usageDate": "2026-08-21",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-25T08:42:35.881Z"
+    },
+    {
+      "id": "b0d9685d-206c-4ded-bae6-08217ff2f908",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22506",
+      "name": "김재훈",
+      "usageDate": "2026-08-08",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-25T14:45:04.991Z"
+    },
+    {
+      "id": "2905a7ce-27c2-4a87-bcf2-5ae11a8e29d3",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20901",
+      "name": "원태희",
+      "usageDate": "2026-08-08",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-25T14:45:43.014Z"
+    },
+    {
+      "id": "15918f89-27b3-4465-a734-920559e6bddb",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20901",
+      "name": "원태희",
+      "usageDate": "2026-08-09",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-25T14:45:52.204Z"
+    },
+    {
+      "id": "c4627a3b-ddac-4b55-a60d-2020ed0f2e89",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20707",
+      "name": "홍석용",
+      "usageDate": "2026-08-02",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-25T23:35:51.506Z"
+    },
+    {
+      "id": "dc7e7f2c-ef8e-499e-9f9e-fc9281b7dbe7",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20707",
+      "name": "홍석용",
+      "usageDate": "2026-08-03",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-25T23:36:01.184Z"
+    },
+    {
+      "id": "c58cee69-eeb9-4934-a306-161b4afdd21a",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21609",
+      "name": "홍승현",
+      "usageDate": "2026-08-09",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-25T23:52:13.864Z"
+    },
+    {
+      "id": "730ff01f-8b9c-4083-8f27-2bf36c4e74a3",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21609",
+      "name": "홍승현",
+      "usageDate": "2026-08-10",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-25T23:52:21.376Z"
+    },
+    {
+      "id": "661d6a71-249d-46d6-ad98-4584d9636a49",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20702",
+      "name": "한정헌",
+      "usageDate": "2026-07-19",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-26T00:08:51.499Z"
+    },
+    {
+      "id": "d47fa8a7-e0b7-48ef-bb38-b11d6006b5ce",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20702",
+      "name": "한정헌",
+      "usageDate": "2026-07-20",
+      "remarks": "",
+      "status": "won",
+      "createdAt": "2026-06-26T00:09:11.581Z"
+    },
+    {
+      "id": "8008f802-eb66-4704-bcbb-cf383aef1353",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90020",
+      "name": "장원상",
+      "usageDate": "2026-08-17",
+      "remarks": "",
+      "status": "lost",
+      "createdAt": "2026-06-26T04:15:58.928Z"
+    },
+    {
+      "id": "b5838191-99f7-4eee-a05c-4d0ae86f8747",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90020",
+      "name": "장원상",
+      "usageDate": "2026-08-18",
       "remarks": "",
       "status": "lost",
       "isReapply": true,
-      "createdAt": "2026-06-01T07:19:07.625Z"
+      "createdAt": "2026-06-26T05:36:02.872Z"
     },
     {
-      "id": "da11c763-4ba9-4ef9-abc2-73576645398a",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "20712",
-      "name": "최희대",
-      "usageDate": "2026-06-18",
+      "id": "e496d18e-4d33-4e6d-832f-361a126bdb29",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21608",
+      "name": "정한솔",
+      "usageDate": "2026-07-28",
       "remarks": "",
       "status": "won",
       "isReapply": true,
-      "createdAt": "2026-06-01T07:19:09.782Z"
+      "createdAt": "2026-06-26T05:41:37.381Z"
     },
     {
-      "id": "5deb1c40-780d-4980-b9b0-e9cd391755d5",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "20314",
-      "name": "장은정",
-      "usageDate": "2026-06-17",
-      "remarks": "",
-      "status": "won",
-      "isReapply": true,
-      "createdAt": "2026-06-01T07:19:42.106Z"
-    },
-    {
-      "id": "2a133fb2-7bc9-445d-8fac-cf5b37350ccc",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
+      "id": "d8eb7789-3bbd-490d-a8ed-054fcaf9953e",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
       "employeeId": "21413",
       "name": "허준무",
-      "usageDate": "2026-06-17",
+      "usageDate": "2026-07-21",
       "remarks": "",
       "status": "lost",
       "isReapply": true,
-      "createdAt": "2026-06-01T07:20:05.014Z"
+      "createdAt": "2026-06-26T05:56:37.160Z"
     },
     {
-      "id": "03157b24-f515-474b-9e42-657202f98718",
-      "lotteryId": "ec5b6559-ff23-4ee7-bb7b-fb62015333d4",
-      "employeeId": "21413",
-      "name": "허준무",
-      "usageDate": "2026-06-18",
+      "id": "c45b11fe-d8f9-4a1a-90aa-2e75f78fc7c8",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22119",
+      "name": "김경아",
+      "usageDate": "2026-08-20",
       "remarks": "",
       "status": "lost",
       "isReapply": true,
-      "createdAt": "2026-06-01T07:20:06.892Z"
+      "createdAt": "2026-06-26T06:05:25.978Z"
+    },
+    {
+      "id": "5d779aa9-f8fe-46ab-83e3-aad26cc757e2",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22109",
+      "name": "안홍천",
+      "usageDate": "2026-07-29",
+      "remarks": "",
+      "status": "lost",
+      "isReapply": true,
+      "createdAt": "2026-06-26T06:28:51.070Z"
+    },
+    {
+      "id": "8c640c7d-6ac4-4f93-bcd2-2369c83fcd94",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22329",
+      "name": "장민교",
+      "usageDate": "2026-08-04",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-26T07:15:20.625Z"
+    },
+    {
+      "id": "ecf6a452-68c3-473f-bdb6-58a3d22415d0",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22329",
+      "name": "장민교",
+      "usageDate": "2026-08-05",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-26T07:16:09.154Z"
+    },
+    {
+      "id": "b2913301-ab7e-4708-85b9-9db940a0ba29",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20707",
+      "name": "홍석용",
+      "usageDate": "2026-08-04",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-26T07:37:52.447Z"
+    },
+    {
+      "id": "bfd0e59e-3478-4236-bb8c-3a043e70e5f9",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21409",
+      "name": "경성현",
+      "usageDate": "2026-07-22",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-28T22:59:02.462Z"
+    },
+    {
+      "id": "5b07a7b5-3061-4157-9aac-e3f139fd4b18",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22210",
+      "name": "윤희성",
+      "usageDate": "2026-07-28",
+      "remarks": "",
+      "status": "lost",
+      "isReapply": true,
+      "createdAt": "2026-06-28T23:36:25.673Z"
+    },
+    {
+      "id": "19f0797b-57d5-4a5e-8845-b04bfefde85c",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22210",
+      "name": "윤희성",
+      "usageDate": "2026-07-29",
+      "remarks": "",
+      "status": "lost",
+      "isReapply": true,
+      "createdAt": "2026-06-28T23:36:28.241Z"
+    },
+    {
+      "id": "3f376329-4132-4e7f-b1fb-8e058037120c",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22008",
+      "name": "김성재",
+      "usageDate": "2026-08-18",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-28T23:53:15.255Z"
+    },
+    {
+      "id": "52f093bd-57cf-4e2d-b100-ab9f6fd30789",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20712",
+      "name": "최희대",
+      "usageDate": "2026-08-05",
+      "remarks": "5일, 6일 연박 사용",
+      "status": "lost",
+      "isReapply": true,
+      "createdAt": "2026-06-29T00:26:16.909Z"
+    },
+    {
+      "id": "d2baaa3c-f52a-4cd3-bf0f-9b9f592943f2",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20712",
+      "name": "최희대",
+      "usageDate": "2026-08-06",
+      "remarks": "5일, 6일 연박 사용",
+      "status": "lost",
+      "isReapply": true,
+      "createdAt": "2026-06-29T00:26:26.678Z"
+    },
+    {
+      "id": "1671de15-0c44-44d1-9de6-ab60a79ae45f",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90002",
+      "name": "김경수",
+      "usageDate": "2026-07-23",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-29T01:52:48.001Z"
+    },
+    {
+      "id": "f975fae2-eeff-44c9-9b71-bbe5f1244168",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22603",
+      "name": "이준우",
+      "usageDate": "2026-07-21",
+      "remarks": "",
+      "status": "lost",
+      "isReapply": true,
+      "createdAt": "2026-06-29T04:55:38.255Z"
+    },
+    {
+      "id": "24ed540d-bade-4732-a42c-bc4ea70ba643",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22603",
+      "name": "이준우",
+      "usageDate": "2026-07-22",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-29T04:55:45.870Z"
+    },
+    {
+      "id": "6a835e62-c8a3-485e-83b7-abb0a1e38d31",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90018",
+      "name": "구준모",
+      "usageDate": "2026-08-20",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-29T06:02:30.762Z"
+    },
+    {
+      "id": "cbf4e2ef-532d-4920-992c-4a0cbffbd04e",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21507",
+      "name": "김해용",
+      "usageDate": "2026-07-28",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-30T04:49:01.884Z"
+    },
+    {
+      "id": "33514290-3056-42d8-8223-621135e9aa95",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21507",
+      "name": "김해용",
+      "usageDate": "2026-07-29",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-30T04:49:06.028Z"
+    },
+    {
+      "id": "7e16a17f-3b17-4de1-8bd3-62a0d7578029",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90021",
+      "name": "김명익",
+      "usageDate": "2026-08-19",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-30T04:49:30.348Z"
+    },
+    {
+      "id": "c982ee18-cda2-4124-99ed-d72795c2cf72",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "90021",
+      "name": "김명익",
+      "usageDate": "2026-08-20",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-30T04:49:46.509Z"
+    },
+    {
+      "id": "9d3b991a-be55-4c78-9393-ebf50e9842b7",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22126",
+      "name": "박상민",
+      "usageDate": "2026-08-18",
+      "remarks": "",
+      "status": "lost",
+      "isReapply": true,
+      "createdAt": "2026-06-30T08:18:11.363Z"
+    },
+    {
+      "id": "19cbec62-d60d-4d49-8a2a-f4a43100e581",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22126",
+      "name": "박상민",
+      "usageDate": "2026-08-19",
+      "remarks": "",
+      "status": "lost",
+      "isReapply": true,
+      "createdAt": "2026-06-30T08:18:13.235Z"
+    },
+    {
+      "id": "bf02b0c3-cb1f-413e-8570-07a8b6b7f91d",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22119",
+      "name": "김경아",
+      "usageDate": "2026-07-23",
+      "remarks": "",
+      "status": "lost",
+      "isReapply": true,
+      "createdAt": "2026-06-30T09:04:44.149Z"
+    },
+    {
+      "id": "6df5fc8b-4c6d-47ef-9eb0-d3b3574e359a",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22506",
+      "name": "김재훈",
+      "usageDate": "2026-07-21",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-30T11:36:59.157Z"
+    },
+    {
+      "id": "f0867191-0756-4fd8-b871-15d0dd74be55",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22506",
+      "name": "김재훈",
+      "usageDate": "2026-08-06",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-30T11:37:04.952Z"
+    },
+    {
+      "id": "a2fbb0fa-f036-4fa0-9265-fc41d25a6cef",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "20901",
+      "name": "원태희",
+      "usageDate": "2026-07-21",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-30T11:39:03.485Z"
+    },
+    {
+      "id": "8459ff75-6963-45a5-8307-0f6c441c8b01",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22316",
+      "name": "임상호",
+      "usageDate": "2026-08-11",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-30T11:43:39.410Z"
+    },
+    {
+      "id": "eea31530-fca7-4b69-b7ab-ab56aa343769",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22316",
+      "name": "임상호",
+      "usageDate": "2026-08-12",
+      "remarks": "",
+      "status": "won",
+      "isReapply": true,
+      "createdAt": "2026-06-30T11:43:42.096Z"
+    },
+    {
+      "id": "778370bc-e2b2-4b58-941f-26d97138dab6",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "22209",
+      "name": "박진혁",
+      "usageDate": "2026-07-19",
+      "remarks": "",
+      "status": "pending",
+      "isReapply": true,
+      "createdAt": "2026-07-01T04:24:24.599Z"
+    },
+    {
+      "id": "74cab98b-3ab1-4f80-8d5c-734385bf5b41",
+      "lotteryId": "03667cc7-debc-4b72-85fb-3500a69411a2",
+      "employeeId": "21821",
+      "name": "이창헌",
+      "usageDate": "2026-07-19",
+      "remarks": "",
+      "status": "pending",
+      "isReapply": true,
+      "createdAt": "2026-07-01T08:06:12.584Z"
     }
   ]
 }

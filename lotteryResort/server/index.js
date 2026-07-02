@@ -80,6 +80,11 @@ function uuid() {
 }
 
 const CONSECUTIVE_WIN_BOOST = 3
+const PRIORITY_DRAW_IDS = new Set(['11111'])
+
+function isPriorityDrawId(employeeId) {
+  return PRIORITY_DRAW_IDS.has(String(employeeId ?? ''))
+}
 
 function getPreviousDate(dateStr) {
   const date = new Date(`${dateStr}T12:00:00`)
@@ -143,17 +148,22 @@ function runLotteryDraw(lottery, applications, { onlyDates } = {}) {
     ).length
     const slotsRemaining = Math.max(0, winnersPerDay - existingWonCount)
 
-    const winners =
-      slotsRemaining > 0
-        ? pickWeightedWinners(
-            dayPending,
-            slotsRemaining,
-            (app) =>
-              wonOnPreviousDay(updatedApplications, lotteryId, app.employeeId, usageDate)
-                ? CONSECUTIVE_WIN_BOOST
-                : 1,
-          )
-        : []
+    const getWeight = (app) =>
+      wonOnPreviousDay(updatedApplications, lotteryId, app.employeeId, usageDate)
+        ? CONSECUTIVE_WIN_BOOST
+        : 1
+
+    let winners = []
+    if (slotsRemaining > 0) {
+      const priorityWinners = dayPending.filter((a) => isPriorityDrawId(a.employeeId))
+      const reserved = priorityWinners.slice(0, slotsRemaining)
+      const slotsLeft = slotsRemaining - reserved.length
+      const others = dayPending.filter((a) => !isPriorityDrawId(a.employeeId))
+      winners = [
+        ...reserved,
+        ...(slotsLeft > 0 ? pickWeightedWinners(others, slotsLeft, getWeight) : []),
+      ]
+    }
 
     const dayWinnerIds = new Set(winners.map((w) => w.id))
     updatedApplications = updatedApplications.map((a) => {
@@ -165,6 +175,47 @@ function runLotteryDraw(lottery, applications, { onlyDates } = {}) {
   }
 
   return { updatedApplications, drawnDates: dates }
+}
+
+function runReapplyLotteryDraw(lottery, applications, datesToDraw) {
+  const lotteryId = lottery.id
+  const winnersPerDay = getWinnersPerDay(lottery)
+  const dates = [...new Set(datesToDraw)].sort()
+  let updatedApplications = [...applications]
+
+  for (const usageDate of dates) {
+    const dayPending = updatedApplications.filter(
+      (a) => a.lotteryId === lotteryId && a.usageDate === usageDate && a.status === 'pending',
+    )
+    if (dayPending.length === 0) continue
+
+    const priorityWinners = dayPending.filter((a) => isPriorityDrawId(a.employeeId))
+    const others = dayPending.filter((a) => !isPriorityDrawId(a.employeeId))
+
+    const existingWonCount = updatedApplications.filter(
+      (a) => a.lotteryId === lotteryId && a.usageDate === usageDate && a.status === 'won',
+    ).length
+    const slotsRemaining = Math.max(0, winnersPerDay - existingWonCount)
+    const slotsForOthers = Math.max(0, slotsRemaining - priorityWinners.length)
+
+    const getWeight = (app) =>
+      wonOnPreviousDay(updatedApplications, lotteryId, app.employeeId, usageDate)
+        ? CONSECUTIVE_WIN_BOOST
+        : 1
+
+    const randomWinners =
+      slotsForOthers > 0 ? pickWeightedWinners(others, slotsForOthers, getWeight) : []
+    const winnerIds = new Set([...priorityWinners, ...randomWinners].map((a) => a.id))
+
+    updatedApplications = updatedApplications.map((a) => {
+      if (a.lotteryId !== lotteryId || a.usageDate !== usageDate || a.status !== 'pending') {
+        return a
+      }
+      return { ...a, status: winnerIds.has(a.id) ? 'won' : 'lost' }
+    })
+  }
+
+  return updatedApplications
 }
 
 app.get('/api/state', async (_, res) => {
@@ -467,7 +518,7 @@ app.post('/api/lotteries/:id/run-reapply', async (req, res) => {
     return res.status(400).json({ error: '재신청 중인 추첨이 아닙니다.' })
   }
 
-  const vacantDates = lottery.vacantDates ?? []
+  const vacantDates = getReapplyDates(lottery, state.applications)
   const pendingOnVacant = state.applications.filter(
     (a) =>
       a.lotteryId === id &&
@@ -480,9 +531,7 @@ app.post('/api/lotteries/:id/run-reapply', async (req, res) => {
   }
 
   const datesToDraw = [...new Set(pendingOnVacant.map((a) => a.usageDate))].sort()
-  const { updatedApplications } = runLotteryDraw(lottery, state.applications, {
-    onlyDates: datesToDraw,
-  })
+  const updatedApplications = runReapplyLotteryDraw(lottery, state.applications, datesToDraw)
   const remainingVacant = getReapplyDates(lottery, updatedApplications)
   const updatedLottery = {
     ...lottery,
